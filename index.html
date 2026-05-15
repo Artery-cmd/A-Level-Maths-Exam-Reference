@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQA A-Level Maths — Quick Reference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div class="eye">AQA A-Level Mathematics · 7357</div>
+  <h1>Pre-Exam <em>Quick Reference</em></h1>
+  <p class="sub">Paper 1 (Pure) · Paper 2 (Pure + Mechanics) · Paper 3 (Pure + Statistics) — spec, past papers & examiner reports</p>
+</div>
+
+<div class="nav" id="nav">
+  <button class="nb on" style="background:var(--r);color:#fff" onclick="show('checklist',this,'--r')">✓ Checklist</button>
+  <button class="nb" onclick="show('vectors',this,'--p')">📐 Vectors</button>
+  <button class="nb" onclick="show('pure',this,'--g')">∫ Pure Proofs</button>
+  <button class="nb" onclick="show('geometry',this,'--a')">◯ Geometry</button>
+  <button class="nb" onclick="show('trig',this,'--pk')">≋ Trig</button>
+  <button class="nb" onclick="show('stats',this,'--b')">📊 Statistics</button>
+  <button class="nb" onclick="show('mechanics',this,'--g')">⚙ Mechanics</button>
+</div>
+
+<!-- ══════ CHECKLIST ══════ -->
+<div id="checklist" class="panel on">
+
+  <div class="big-check">
+    <h3>Pre-exam progress tracker</h3>
+    <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+    <div class="progress-label" id="plabel">0 / 0 checked</div>
+  </div>
+
+  <div class="nib">
+    <div class="nib-t">⚡ NOT in the formula booklet — you must memorise these</div>
+    Quadratic formula &nbsp;·&nbsp; Exact trig values (30/45/60°) &nbsp;·&nbsp; sin²+cos²=1 and derived identities &nbsp;·&nbsp; Double angle formulas &nbsp;·&nbsp; Log laws &nbsp;·&nbsp; Arithmetic &amp; geometric series formulas &nbsp;·&nbsp; Factor theorem &nbsp;·&nbsp; Discriminant conditions &nbsp;·&nbsp; F=ma &nbsp;·&nbsp; Integration by parts trigger (LATE) &nbsp;·&nbsp; Cosine/sine rule &nbsp;·&nbsp; Proof conclusion wording
+  </div>
+
+  <div class="sl">Paper 1 — Pure Mathematics (2 hrs, 100 marks)</div>
+  <div class="check-grid">
+    <div class="check-card">
+      <h3 style="color:var(--p)">Algebra &amp; Functions</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Factor theorem: f(a)=0 ⟹ (x−a) is a factor</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Partial fractions — 3 types: distinct, repeated, improper</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Completing the square → min/max and vertex form</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Modulus graphs: reflect below x-axis, solve with ±</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Inverse functions: swap x,y, rearrange. Domain of f⁻¹ = range of f</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Transformations: y=f(x+a) shifts left, y=f(ax) squashes</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--p)">Coordinate Geometry</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Circle: (x−a)²+(y−b)²=r², centre (a,b), radius r</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Tangent ⊥ radius at point of contact</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Perpendicular bisector of any chord passes through centre</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Parametric → Cartesian: eliminate parameter t</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Parametric dy/dx = (dy/dt) ÷ (dx/dt)</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--p)">Sequences &amp; Series</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Arithmetic: nth = a+(n−1)d, Sn = n/2·(2a+(n−1)d)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Geometric: nth = arⁿ⁻¹, Sn = a(1−rⁿ)/(1−r)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>S∞ = a/(1−r) — only valid when |r| &lt; 1</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Binomial (1+x)ⁿ — valid for |x| &lt; 1, always state this</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>For (a+bx)ⁿ: factor out aⁿ first, then expand (1+bx/a)ⁿ</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--p)">Calculus</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Chain, product, quotient rules — know all three cold</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Implicit: d/dx(y²) = 2y·dy/dx (chain rule)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Integration by parts: ∫u dv = uv − ∫v du (LATE)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Reverse chain rule: ∫f'(x)/f(x) dx = ln|f(x)|+c</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Change limits when substituting in definite integrals</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Area between curves: ∫(top − bottom) dx</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Always add +c on indefinite integrals</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--p)">Proof &amp; Logarithms</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Contradiction: assume opposite, derive impossibility</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Counterexample: one example is enough to disprove</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Log laws: log(ab)=loga+logb, log(a/b)=loga−logb, log(aⁿ)=n loga</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Change of base: logₐb = lnb/lna</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>eˡⁿˣ = x and ln(eˣ) = x</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--p)">Numerical Methods</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Sign change → root in interval (show f(a)&lt;0 and f(b)&gt;0)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Iteration: xₙ₊₁ = g(xₙ) — apply repeatedly until convergence</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Newton-Raphson: xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Trapezium rule: h/2·[y₀+yₙ+2(y₁+…+yₙ₋₁)]</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Trapezium: underestimate if curve is concave up, overestimate if concave down</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Paper 2 — Pure + Mechanics Section B (2 hrs, 100 marks)</div>
+  <div class="check-grid">
+    <div class="check-card">
+      <h3 style="color:var(--b)">Kinematics (SUVAT)</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Always state positive direction at top of working</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>g = 9.8 ms⁻² unless told otherwise (not 10)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>At maximum height: v = 0</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Distance ≠ displacement if direction changes — split and add |areas|</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>v-t graph: gradient = acceleration, area = displacement</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>SUVAT only for constant acceleration — use calculus if variable</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--b)">Forces &amp; Newton's Laws</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>F = ma — resolve forces first, THEN apply</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Draw force diagram before writing any equations</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Inclined plane: N = mg cosθ, component along = mg sinθ</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Friction: F = μN (at limiting equilibrium / sliding)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Connected particles: same a, write separate F=ma for each, add to find a then sub back for T</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--b)">Moments &amp; Equilibrium</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Moment = F × perpendicular distance from pivot</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Equilibrium: ΣF = 0 AND Σmoments = 0</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Take moments about a point to eliminate unknowns at that point</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Uniform rod: weight acts at midpoint</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Clockwise and anticlockwise moments must balance</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--b)">Modelling assumptions</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Particle: point mass, no size, no rotation, air resistance ignored</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Smooth surface: no friction (F = 0)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Light string/rod: mass = 0</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Inextensible string: same acceleration throughout system</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Paper 3 — Pure + Statistics Section B (2 hrs, 100 marks)</div>
+  <div class="check-grid">
+    <div class="check-card">
+      <h3 style="color:var(--g)">Statistical Distributions</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Binomial B(n,p): mean=np, variance=np(1−p)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Normal N(μ,σ²): standardise Z=(X−μ)/σ</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Sample mean distribution: X̄ ~ N(μ, σ²/n)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Normal approx to binomial: use continuity correction ±0.5</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Know your Casio: Normal CD, Inverse Normal, Binomial CD/PD</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--g)">Hypothesis Testing</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Define H₀ and H₁ using μ or p before anything else</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Two-tailed test: halve the significance level for each tail</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>State test statistic distribution under H₀</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Compare p-value to α, or check if observed value is in critical region</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Conclusion must be in context — not just "reject H₀"</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>"Insufficient evidence to reject H₀" ≠ H₀ is true</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--g)">Correlation &amp; Regression</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>PMCC r: −1 ≤ r ≤ 1. r=0 means no linear correlation</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Hypothesis test for ρ: H₀: ρ=0, compare |r| to critical value</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Regression line y=a+bx: b = rate of change of y per unit x</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Don't extrapolate beyond the data range</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Correlation does not imply causation — state this if relevant</span></li>
+      </ul>
+    </div>
+    <div class="check-card">
+      <h3 style="color:var(--g)">Sampling &amp; Data</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Simple random: every member equally likely</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Stratified: proportional sub-group — n × (group/total)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Systematic: every kth member, k = population ÷ sample size</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Outlier: &gt; Q3+1.5×IQR or &lt; Q1−1.5×IQR</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Skew: +ve → mean &gt; median, −ve → mean &lt; median</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Universal exam technique — all three papers</div>
+  <div class="check-grid">
+    <div class="check-card" style="grid-column:1/-1">
+      <h3 style="color:var(--a)">Every question, every time</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Read the last line of the question first — know what's being asked</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Underline: "exact", "show that", "hence", "in context", "state"</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>"Show that" — work from given info towards the target, never backwards</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>"Hence" — you MUST use the result from the previous part</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Mark count = number of steps. 6 marks = 6 things to write</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Never leave a blank — write a method attempt for method marks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Cross out (don't erase) work you don't want marked</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Only round at the very end — carry exact values throughout</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Check answer makes sense (negative time, probability &gt;1 = error)</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Top marks lost — recurring from examiner reports</div>
+    <b class="cr">+c missing</b> on indefinite integrals &nbsp;·&nbsp;
+    <b class="ca">No conclusion sentence</b> in proofs or hypothesis tests &nbsp;·&nbsp;
+    <b class="cb">Limits not changed</b> in definite integrals by substitution &nbsp;·&nbsp;
+    <b class="cg">Wrong direction sign</b> in mechanics &nbsp;·&nbsp;
+    <b class="cpk">Binomial validity |x|&lt;1</b> not stated &nbsp;·&nbsp;
+    <b class="cp">Shared point omitted</b> in collinear proofs &nbsp;·&nbsp;
+    <b class="cr">α not halved</b> in two-tailed tests &nbsp;·&nbsp;
+    <b class="ca">Rounding mid-calculation</b> instead of at the end &nbsp;·&nbsp;
+    <b class="cb">g=10 used</b> instead of 9.8 &nbsp;·&nbsp;
+    <b class="cg">Context missing</b> from stat/mechanics conclusions
+  </div>
+</div>
+
+<!-- ══════ VECTORS ══════ -->
+<div id="vectors" class="panel">
+  <div class="sl">Core rules</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cp">Parallel</div><div class="pl-f">a = λb</div><div class="pl-n">scalar multiple, any λ ≠ 0</div></div>
+    <div class="pl"><div class="pl-l cg">Reverse</div><div class="pl-f">BA = −AB</div></div>
+    <div class="pl"><div class="pl-l ca">Path rule</div><div class="pl-f">AC = AB + BC</div><div class="pl-n">follow the arrows</div></div>
+    <div class="pl"><div class="pl-l cb">Midpoint</div><div class="pl-f">OM = ½(OA+OB)</div></div>
+    <div class="pl"><div class="pl-l cr">Ratio m:n</div><div class="pl-f">OP = OA + m/(m+n)·AB</div></div>
+    <div class="pl"><div class="pl-l cpk">Magnitude</div><div class="pl-f">|v| = √(x²+y²+z²)</div></div>
+    <div class="pl"><div class="pl-l cye">Dot product</div><div class="pl-f">a·b = 0 ⟹ perpendicular</div></div>
+  </div>
+
+  <div class="sl">Shape proofs</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Parallelogram</span></div>
+      <div class="cond"><span class="ct" style="background:rgba(91,184,245,.12);color:var(--b)">OR</span>Show <code>AB = DC</code> (equal &amp; parallel opposite sides)</div>
+      <div class="cond"><span class="ct" style="background:rgba(91,184,245,.12);color:var(--b)">OR</span>Midpoint of AC = midpoint of BD</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Trapezium</span></div>
+      <div class="cond"><span class="ct" style="background:rgba(240,160,75,.12);color:var(--a)">SHOW</span><code>DC = λ·AB</code>, λ ≠ 0 and λ ≠ 1</div>
+      <div class="tip"><b class="ca">⚠</b> λ=1 → parallelogram. Must state "AB ∥ DC and AB ≠ DC → trapezium"</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Rhombus</span></div>
+      <div class="cond"><span class="ct" style="background:rgba(224,99,108,.12);color:var(--r)">1</span>Parallelogram: <code>AB = DC</code></div>
+      <div class="cond"><span class="ct" style="background:rgba(224,99,108,.12);color:var(--r)">2</span>Equal adjacent sides: <code>|AB| = |AD|</code></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Rectangle</span></div>
+      <div class="cond"><span class="ct" style="background:rgba(79,209,165,.12);color:var(--g)">1</span>Parallelogram: <code>AB = DC</code></div>
+      <div class="cond"><span class="ct" style="background:rgba(79,209,165,.12);color:var(--g)">2</span>Right angle: <code>AB · AD = 0</code></div>
+    </div>
+  </div>
+
+  <div class="sl">Collinear points</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">A, B, C are collinear</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--p);color:#fff">1</div><span>Show <code>AB = λ·AC</code> (scalar multiple → parallel)</span></div>
+      <div class="step"><div class="sn" style="background:var(--p);color:#fff">2</div><span>State: "AB ∥ AC and they share point A → A, B, C are collinear"</span></div>
+    </div>
+    <div class="tip"><b class="cr">⚠ Shared point is a required mark — parallel alone is not enough</b></div>
+  </div>
+
+  <div class="callout">
+    <div class="c-title">Conclusion templates</div>
+    <b class="ca">Trapezium:</b> "DC = λAB so DC ∥ AB. Since λ≠1, DC≠AB → exactly one pair of parallel sides → ABCD is a trapezium."<br>
+    <b class="cb">Parallelogram:</b> "AB = DC so sides are equal and parallel → ABCD is a parallelogram."<br>
+    <b class="cg">Collinear:</b> "AB = λAC, parallel vectors sharing point A → A, B, C are collinear."
+  </div>
+</div>
+
+<!-- ══════ PURE PROOFS ══════ -->
+<div id="pure" class="panel">
+  <div class="sl">Proof by contradiction</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">√2 is irrational</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Assume √2 = p/q in lowest terms (p,q coprime integers)</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>2q²=p² → p² even → p even → write p=2k</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>4k²=2q² → q²=2k² → q even</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>Both p,q even contradicts coprime → contradiction ✓</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Infinitely many primes</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Assume finitely many: p₁, p₂, …, pₙ</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Form N = (p₁×p₂×…×pₙ)+1</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>N÷pᵢ leaves remainder 1 for all i → N not divisible by any listed prime</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>N is prime or has unlisted prime factor → contradiction ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Direct proof / exhaustion</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">n²+n always even</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>n=2k → n²+n = 2k(2k+1) → even ✓</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">O</div><span>n=2k+1 → (2k+1)(2k+2) = 2(2k+1)(k+1) → even ✓</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Product of two odds is odd</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">1</div><span>m=2a+1, n=2b+1</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">2</div><span>mn = 4ab+2a+2b+1 = 2(2ab+a+b)+1 → odd ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Algebraic proofs</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">AM-GM style inequality</span></div>
+      <div class="mb">(a−b)² ≥ 0<br>→ a²+b² ≥ 2ab</div>
+      <div class="tip">Start from a perfect square ≥ 0. Always valid, examiners love it</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Completing the square</span></div>
+      <div class="mb">ax²+bx+c = a(x+b/2a)² + c − b²/4a</div>
+      <div class="tip">Proves expressions are always ≥ 0 or shows minimum values</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Divisibility</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">1</div><span>Write integers as 2n, 2n+1, 3n, 3n+1, 3n+2 etc.</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">2</div><span>Expand and factorise</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">3</div><span>Show result = k × (integer) for required divisor k</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Disproof by counterexample</span></div>
+      <div class="tip" style="margin-top:0;border-left-color:var(--r)">One example is enough. State it, verify it, done. "All primes odd" → counterexample: 2.</div>
+    </div>
+  </div>
+
+  <div class="sl">Proof by induction</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">4-step structure — always the same</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">1</div><span><b>Base case:</b> verify result holds for n=1</span></div>
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">2</div><span><b>Assumption:</b> assume true for n=k — write out the statement explicitly</span></div>
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">3</div><span><b>Inductive step:</b> prove for n=k+1 using the assumption</span></div>
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">4</div><span><b>Conclusion:</b> "True for n=1; if true for n=k then true for n=k+1; by PMI true for all n∈ℤ⁺"</span></div>
+    </div>
+    <div class="mb">Σr = n(n+1)/2 &nbsp;&nbsp;&nbsp; Σr² = n(n+1)(2n+1)/6 &nbsp;&nbsp;&nbsp; Σr³ = [n(n+1)/2]²</div>
+  </div>
+
+  <div class="callout">
+    <div class="c-title">Exact proof phrases — use these</div>
+    <span class="cg">"Assume for contradiction that…"</span> &nbsp;·&nbsp;
+    <span class="cb">"This contradicts our assumption, therefore…"</span> &nbsp;·&nbsp;
+    <span class="ca">"By the principle of mathematical induction, the result holds for all n∈ℤ⁺"</span> &nbsp;·&nbsp;
+    <span class="cr">"Since p and q are both even, they share a common factor of 2, contradicting coprimality"</span>
+  </div>
+</div>
+
+<!-- ══════ GEOMETRY ══════ -->
+<div id="geometry" class="panel">
+  <div class="sl">2D areas</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l ca">Triangle</div><div class="pl-f">½bh</div></div>
+    <div class="pl"><div class="pl-l ca">Triangle (trig)</div><div class="pl-f">½ab sinC</div><div class="pl-n">two sides + included angle</div></div>
+    <div class="pl"><div class="pl-l ca">Parallelogram</div><div class="pl-f">bh</div></div>
+    <div class="pl"><div class="pl-l ca">Trapezium</div><div class="pl-f">½(a+b)h</div><div class="pl-n">a,b = parallel sides</div></div>
+    <div class="pl"><div class="pl-l ca">Circle</div><div class="pl-f">πr²</div></div>
+    <div class="pl"><div class="pl-l ca">Sector</div><div class="pl-f">½r²θ</div><div class="pl-n">θ in radians</div></div>
+    <div class="pl"><div class="pl-l ca">Segment</div><div class="pl-f">½r²(θ−sinθ)</div><div class="pl-n">sector minus triangle</div></div>
+    <div class="pl"><div class="pl-l ca">Kite / Rhombus</div><div class="pl-f">½d₁d₂</div><div class="pl-n">product of diagonals</div></div>
+  </div>
+  <div class="sl">Arc &amp; perimeter</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cb">Circumference</div><div class="pl-f">2πr</div></div>
+    <div class="pl"><div class="pl-l cb">Arc length</div><div class="pl-f">rθ</div><div class="pl-n">θ must be in radians</div></div>
+    <div class="pl"><div class="pl-l cb">Sector perimeter</div><div class="pl-f">2r + rθ</div><div class="pl-n">two radii + arc</div></div>
+  </div>
+  <div class="sl">3D volumes</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cg">Cuboid</div><div class="pl-f">lwh</div></div>
+    <div class="pl"><div class="pl-l cg">Cylinder</div><div class="pl-f">πr²h</div></div>
+    <div class="pl"><div class="pl-l cg">Sphere</div><div class="pl-f">⁴⁄₃πr³</div></div>
+    <div class="pl"><div class="pl-l cg">Hemisphere</div><div class="pl-f">⅔πr³</div></div>
+    <div class="pl"><div class="pl-l cg">Cone</div><div class="pl-f">⅓πr²h</div></div>
+    <div class="pl"><div class="pl-l cg">Pyramid</div><div class="pl-f">⅓ × base area × h</div></div>
+    <div class="pl"><div class="pl-l cg">Prism</div><div class="pl-f">cross-section × length</div></div>
+    <div class="pl"><div class="pl-l cg">Frustum</div><div class="pl-f">⅓πh(R²+Rr+r²)</div></div>
+  </div>
+  <div class="sl">Surface areas</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cr">Cube</div><div class="pl-f">6a²</div></div>
+    <div class="pl"><div class="pl-l cr">Cuboid</div><div class="pl-f">2(lw+lh+wh)</div></div>
+    <div class="pl"><div class="pl-l cr">Cylinder (closed)</div><div class="pl-f">2πr²+2πrh</div></div>
+    <div class="pl"><div class="pl-l cr">Cylinder (open)</div><div class="pl-f">πr²+2πrh</div></div>
+    <div class="pl"><div class="pl-l cr">Sphere</div><div class="pl-f">4πr²</div></div>
+    <div class="pl"><div class="pl-l cr">Hemisphere</div><div class="pl-f">3πr²</div><div class="pl-n">curved 2πr² + base πr²</div></div>
+    <div class="pl"><div class="pl-l cr">Cone (closed)</div><div class="pl-f">πr²+πrl</div><div class="pl-n">l = slant height</div></div>
+    <div class="pl"><div class="pl-l cr">Slant height</div><div class="pl-f">l = √(r²+h²)</div></div>
+  </div>
+  <div class="sl">Triangle rules</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Sine rule</span></div>
+      <div class="mb">a/sinA = b/sinB = c/sinC</div>
+      <div class="tip">Use: 2 angles + 1 side, or 2 sides + non-included angle.<br><b class="cr">⚠ Ambiguous case</b> — two triangles may be possible when angle is obtuse</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Cosine rule</span></div>
+      <div class="mb">a² = b²+c²−2bc cosA<br>cosA = (b²+c²−a²)/2bc</div>
+      <div class="tip">Use: 2 sides + included angle, or all 3 sides to find an angle</div>
+    </div>
+  </div>
+  <div class="warn">
+    <div class="w-title">⚠ Geometry traps</div>
+    <b class="cr">Sector vs segment:</b> segment = sector − triangle. Triangle area = ½r²sinθ when both sides = r &nbsp;·&nbsp;
+    <b class="ca">Open vs closed:</b> always check whether lids/bases are included &nbsp;·&nbsp;
+    <b class="cb">Radians only:</b> arc length rθ and sector area ½r²θ only work with θ in radians
+  </div>
+</div>
+
+<!-- ══════ TRIG ══════ -->
+<div id="trig" class="panel">
+  <div class="sl">Identities (memorise all)</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cr">Pythagorean</div><div class="pl-f">sin²θ+cos²θ=1</div></div>
+    <div class="pl"><div class="pl-l cr">Derived</div><div class="pl-f">1+tan²θ=sec²θ</div></div>
+    <div class="pl"><div class="pl-l cr">Derived</div><div class="pl-f">1+cot²θ=cosec²θ</div></div>
+  </div>
+  <div class="sl">Double angle</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cp">sin 2θ</div><div class="pl-f">2sinθ cosθ</div></div>
+    <div class="pl"><div class="pl-l cp">cos 2θ (×3 forms)</div><div class="pl-f">cos²θ−sin²θ<br>2cos²θ−1<br>1−2sin²θ</div></div>
+    <div class="pl"><div class="pl-l cp">tan 2θ</div><div class="pl-f">2tanθ/(1−tan²θ)</div></div>
+  </div>
+  <div class="sl">Addition formulas</div>
+  <div class="two">
+    <div class="pl"><div class="pl-l cb">sin(A±B)</div><div class="pl-f">sinA cosB ± cosA sinB</div></div>
+    <div class="pl"><div class="pl-l cb">cos(A±B)</div><div class="pl-f">cosA cosB ∓ sinA sinB</div></div>
+    <div class="pl"><div class="pl-l cb">tan(A+B)</div><div class="pl-f">(tanA+tanB)/(1−tanA tanB)</div></div>
+    <div class="pl"><div class="pl-l cb">tan(A−B)</div><div class="pl-f">(tanA−tanB)/(1+tanA tanB)</div></div>
+  </div>
+  <div class="sl">Exact values</div>
+  <div class="three">
+    <div class="pl"><div class="pl-l cg">30° = π/6</div><div class="pl-f">sin=½<br>cos=√3/2<br>tan=1/√3</div></div>
+    <div class="pl"><div class="pl-l cg">45° = π/4</div><div class="pl-f">sin=1/√2<br>cos=1/√2<br>tan=1</div></div>
+    <div class="pl"><div class="pl-l cg">60° = π/3</div><div class="pl-f">sin=√3/2<br>cos=½<br>tan=√3</div></div>
+  </div>
+  <div class="sl">R-form</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">a sinθ + b cosθ ≡ R sin(θ+φ)</span></div>
+    <div class="mb">R = √(a²+b²) &nbsp;&nbsp;&nbsp; tanφ = b/a</div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">1</div><span>Expand: R sinθ cosφ + R cosθ sinφ</span></div>
+      <div class="step"><div class="sn" style="background:var(--a);color:#000">2</div><span>Match: R cosφ = a, R sinφ = b → solve for R and φ</span></div>
+    </div>
+    <div class="tip">For a sinθ − b cosθ use R sin(θ−φ). For a cosθ + b sinθ use R cos(θ−φ)</div>
+  </div>
+  <div class="sl">Differentiation &amp; Integration</div>
+  <div class="two">
+    <div class="pl"><div class="pl-l cpk">d/dx</div><div class="pl-f">sin ax → a cos ax<br>cos ax → −a sin ax<br>tan ax → a sec²ax</div></div>
+    <div class="pl"><div class="pl-l cpk">∫ dx</div><div class="pl-f">sin ax → −cos(ax)/a + c<br>cos ax → sin(ax)/a + c<br>sec²ax → tan(ax)/a + c</div></div>
+    <div class="pl"><div class="pl-l cpk">∫ sin²x dx</div><div class="pl-f">use ½(1−cos2x)</div></div>
+    <div class="pl"><div class="pl-l cpk">∫ cos²x dx</div><div class="pl-f">use ½(1+cos2x)</div></div>
+  </div>
+  <div class="sl">Calculus rules</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Integration by parts</span></div>
+      <div class="mb">∫u dv = uv − ∫v du</div>
+      <div class="tip"><b>LATE rule:</b> u = Logarithm first, then Algebraic, Trig, Exponential</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Reverse chain rule</span></div>
+      <div class="mb">∫f'(x)/f(x) dx = ln|f(x)| + c<br>∫f'(x)[f(x)]ⁿ dx = [f(x)]ⁿ⁺¹/(n+1) + c</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Chain rule</span></div>
+      <div class="mb">dy/dx = (dy/du)·(du/dx)</div>
+      <div class="tip">Work from outside in for composite functions</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Product &amp; Quotient rule</span></div>
+      <div class="mb">d/dx(uv) = u'v + uv'<br>(u/v)' = (u'v − uv') / v²</div>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="c-title">Trig solving checklist</div>
+    <b class="cr">Always find ALL solutions</b> in the range — don't stop at the first &nbsp;·&nbsp;
+    <b class="ca">CAST:</b> All (Q1) · Sin (Q2) · Tan (Q3) · Cos (Q4) &nbsp;·&nbsp;
+    <b class="cg">General solutions:</b> sinθ=k → θ=α+360n or (180−α)+360n &nbsp;·&nbsp;
+    <b class="cb">Squaring an equation loses solutions</b> — always verify back in original
+  </div>
+</div>
+
+<!-- ══════ STATISTICS ══════ -->
+<div id="stats" class="panel">
+  <div class="sl">Distributions</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Binomial B(n, p)</span></div>
+      <div class="mb">P(X=r) = ⁿCᵣ · pʳ · (1−p)ⁿ⁻ʳ<br>Mean = np &nbsp;&nbsp;&nbsp; Variance = np(1−p)</div>
+      <div class="tip">Fixed n independent trials, constant p, two outcomes only</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Normal N(μ, σ²)</span></div>
+      <div class="mb">Standardise: Z = (X−μ)/σ ~ N(0,1)<br>Sample mean: X̄ ~ N(μ, σ²/n)</div>
+      <div class="tip">Symmetric, bell-shaped. Use calculator for all probabilities</div>
+    </div>
+  </div>
+
+  <div class="sl">Hypothesis testing — full 5-step method</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Every test follows the same structure</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span><b>Define:</b> state what μ or p represents in the context of the question</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span><b>Hypotheses:</b> H₀: μ=… and H₁: μ&gt;… / μ&lt;… / μ≠…</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span><b>Test statistic:</b> state its distribution assuming H₀ is true</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span><b>Calculate:</b> p-value OR critical region</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">5</div><span><b>Conclude in context:</b> "There is/is not sufficient evidence to suggest that [original claim]…"</span></div>
+    </div>
+    <div class="tip"><b class="cr">Two-tailed:</b> halve α for each tail &nbsp;·&nbsp; <b class="ca">One-tailed:</b> full α on one side</div>
+  </div>
+
+  <div class="sl">Correlation &amp; Regression</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">PMCC r</span></div>
+      <div class="mb">−1 ≤ r ≤ 1<br>r=1: perfect +ve &nbsp; r=0: no linear corr</div>
+      <div class="tip">Test: H₀: ρ=0 vs H₁: ρ≠0 (two-tailed) or ρ&gt;0/&lt;0 (one-tailed). Compare |r| to critical value table</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Regression line y=a+bx</span></div>
+      <div class="mb">b = Sxy/Sxx &nbsp;&nbsp; a = ȳ − bx̄</div>
+      <div class="tip">b = change in y per unit increase in x. Don't extrapolate. Correlation ≠ causation.</div>
+    </div>
+  </div>
+
+  <div class="sl">Sampling</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Simple random</div><div class="pl-n">every member equally likely; random number generator</div></div>
+    <div class="pl"><div class="pl-l cb">Stratified</div><div class="pl-n">proportional sub-groups: n × (group size/total)</div></div>
+    <div class="pl"><div class="pl-l cb">Systematic</div><div class="pl-n">every kth member; k = population÷sample size</div></div>
+    <div class="pl"><div class="pl-l cb">Quota</div><div class="pl-n">fill categories until quota met — non-random within</div></div>
+    <div class="pl"><div class="pl-l cb">Opportunity</div><div class="pl-n">whoever is available — easy but biased</div></div>
+  </div>
+
+  <div class="sl">Descriptive stats</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Outlier</div><div class="pl-f">&gt; Q3+1.5×IQR<br>&lt; Q1−1.5×IQR</div></div>
+    <div class="pl"><div class="pl-l cg">Variance</div><div class="pl-f">Σx²/n − x̄²</div></div>
+    <div class="pl"><div class="pl-l cg">Skew</div><div class="pl-f">+ve: mean&gt;median&gt;mode<br>−ve: mean&lt;median&lt;mode</div></div>
+    <div class="pl"><div class="pl-l cg">Coded: y=(x−a)/b</div><div class="pl-f">ȳ → ȳ×b+a<br>s_y → s_x×b</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Stats exam traps</div>
+    <b class="cr">Conclusion must be in context</b> — don't just say "reject H₀" &nbsp;·&nbsp;
+    <b class="ca">Two-tailed: halve α</b> — for 5% significance use 2.5% each end &nbsp;·&nbsp;
+    <b class="cg">"Insufficient evidence"</b> ≠ H₀ is true. Say "insufficient evidence that μ has changed" &nbsp;·&nbsp;
+    <b class="cb">Normal approx to binomial:</b> use continuity correction ±0.5 &nbsp;·&nbsp;
+    <b class="cpk">σ² vs s²:</b> σ² is population variance, s² is sample — check which you're given
+  </div>
+</div>
+
+<!-- ══════ MECHANICS ══════ -->
+<div id="mechanics" class="panel">
+  <div class="sl">SUVAT equations (given in formula booklet)</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">eq 1</div><div class="pl-f">v = u + at</div></div>
+    <div class="pl"><div class="pl-l cb">eq 2</div><div class="pl-f">s = ut + ½at²</div></div>
+    <div class="pl"><div class="pl-l cb">eq 3</div><div class="pl-f">v² = u² + 2as</div></div>
+    <div class="pl"><div class="pl-l cb">eq 4</div><div class="pl-f">s = ½(u+v)t</div></div>
+    <div class="pl"><div class="pl-l cb">eq 5</div><div class="pl-f">s = vt − ½at²</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:.7rem"><b class="ca">SUVAT only valid when acceleration is constant.</b> Variable acceleration → use calculus: v=ds/dt, a=dv/dt</div>
+
+  <div class="sl">Core mechanics</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Newton's 2nd Law</span></div>
+      <div class="mb">F = ma (resultant force)</div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>State and label positive direction</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Draw clear force diagram</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>Resolve: ΣF = ma in each direction</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Inclined plane</span></div>
+      <div class="mb">Normal: N = mg cosθ<br>Along slope: F_net = mg sinθ ± friction</div>
+      <div class="tip">Friction F = μN at limiting equilibrium or when sliding. F ≤ μN when stationary.</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Connected particles</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">1</div><span>Write F=ma separately for each particle</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">2</div><span>Inextensible string → same acceleration a for all</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">3</div><span>Add equations to cancel T, find a, sub back for T</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Moments</span></div>
+      <div class="mb">Moment = F × perpendicular distance</div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">1</div><span>Take moments about a point to eliminate unknown forces there</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">2</div><span>Equilibrium: ΣF=0 AND Σmoments=0</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">3</div><span>Uniform rod: weight at midpoint</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Variable acceleration (calculus)</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cp">v from s</div><div class="pl-f">v = ds/dt</div></div>
+    <div class="pl"><div class="pl-l cp">a from v</div><div class="pl-f">a = dv/dt = d²s/dt²</div></div>
+    <div class="pl"><div class="pl-l cp">s from v</div><div class="pl-f">s = ∫v dt</div></div>
+    <div class="pl"><div class="pl-l cp">v from a</div><div class="pl-f">v = ∫a dt</div></div>
+  </div>
+
+  <div class="sl">Modelling assumptions</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Particle</div><div class="pl-n">point mass, no rotation, air resistance ignored</div></div>
+    <div class="pl"><div class="pl-l cg">Smooth</div><div class="pl-n">no friction, F = 0</div></div>
+    <div class="pl"><div class="pl-l cg">Light string</div><div class="pl-n">mass of string = 0</div></div>
+    <div class="pl"><div class="pl-l cg">Inextensible</div><div class="pl-n">same acceleration throughout</div></div>
+    <div class="pl"><div class="pl-l cg">Rigid body</div><div class="pl-n">does not deform under forces</div></div>
+    <div class="pl"><div class="pl-l cg">g = 9.8 ms⁻²</div><div class="pl-n">use unless told otherwise</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Mechanics exam traps</div>
+    <b class="cr">Direction sign:</b> state it first and stick to it — losing a sign loses all subsequent marks &nbsp;·&nbsp;
+    <b class="ca">Distance vs displacement:</b> if object reverses, split into two integrals and sum |values| &nbsp;·&nbsp;
+    <b class="cg">Max height → v=0, not a=0</b> &nbsp;·&nbsp;
+    <b class="cb">Stationary object friction:</b> F ≤ μN, not necessarily equal &nbsp;·&nbsp;
+    <b class="cpk">g=9.8 not 10</b> — using 10 loses accuracy marks &nbsp;·&nbsp;
+    <b class="cr">Conclusion in context:</b> always state what the numerical answer means physically
+  </div>
+</div>
+
+</div>
+<script src="main.js"></script>
+</body>
+</html>
