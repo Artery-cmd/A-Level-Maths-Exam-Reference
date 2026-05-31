@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AQA A-Level Physics — Quick Reference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div class="eye">AQA A-Level Physics · 7408</div>
+  <h1>Pre-Exam <em>Quick Reference</em></h1>
+  <p class="sub">Paper 1 · Paper 2 · Paper 3 — spec, past papers &amp; examiner reports &nbsp;·&nbsp; <a href="index.html" style="color:var(--p);text-decoration:none">← Maths ref</a></p>
+</div>
+
+<div class="nav" id="nav">
+  <button class="nb on" style="background:var(--r);color:#fff" onclick="show('checklist',this,'--r')">✓ Checklist</button>
+  <button class="nb" onclick="show('particles',this,'--b')">⚛ Particles</button>
+  <button class="nb" onclick="show('waves',this,'--g')">〜 Waves</button>
+  <button class="nb" onclick="show('mechanics',this,'--a')">↗ Mechanics</button>
+  <button class="nb" onclick="show('electricity',this,'--pk')">⚡ Electricity</button>
+  <button class="nb" onclick="show('fields',this,'--p')">◎ Fields</button>
+  <button class="nb" onclick="show('nuclear',this,'--g')">☢ Nuclear</button>
+  <button class="nb" onclick="show('practical',this,'--b')">🔬 Practical</button>
+</div>
+
+<!-- ══════ CHECKLIST ══════ -->
+<div id="checklist" class="panel on">
+
+  <div class="big-check">
+    <h3>Pre-exam progress tracker</h3>
+    <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+    <div class="progress-label" id="plabel">0 / 0 checked</div>
+  </div>
+
+  <div class="nib">
+    <div class="nib-t">📋 Paper structure</div>
+    <b class="cb">Paper 1 (2 hrs, 85 marks):</b> Measurements &amp; errors · Particles &amp; radiation · Waves · Mechanics &amp; materials · Electricity &nbsp;·&nbsp;
+    <b class="cg">Paper 2 (2 hrs, 85 marks):</b> Further mechanics · Thermal physics · Fields · Nuclear physics · Optional topic &nbsp;·&nbsp;
+    <b class="ca">Paper 3 (2 hrs, 80 marks):</b> Section A — practical skills &amp; data analysis · Section B — optional topic
+  </div>
+
+  <div class="nib" style="background:rgba(232,212,77,.06);border-color:rgba(232,212,77,.18)">
+    <div class="nib-t" style="color:var(--ye)">⚡ NOT in the data booklet — memorise these</div>
+    de Broglie: λ=h/mv &nbsp;·&nbsp; Time constant: τ=RC &nbsp;·&nbsp; Circular: v=ωr, a=ω²r &nbsp;·&nbsp; SHM: a=−ω²x, x=Acosωt, vmax=Aω &nbsp;·&nbsp; T=2π√(m/k), T=2π√(l/g) &nbsp;·&nbsp; g=GM/r² &nbsp;·&nbsp; Capacitor energy: W=½QV=½CV²=Q²/2C &nbsp;·&nbsp; F=BIl, F=Bqv &nbsp;·&nbsp; λ=ln2/t½ &nbsp;·&nbsp; E=mc²
+  </div>
+
+  <div class="sl">Paper 1 checklist</div>
+  <div class="check-grid">
+
+    <div class="check-card">
+      <h3 style="color:var(--b)">Measurements &amp; Errors</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Absolute, fractional and percentage uncertainty — know all three forms</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Adding quantities: add absolute uncertainties</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Multiplying/dividing: add percentage uncertainties</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Powers: multiply % uncertainty by the power</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Random error: spread of results around mean. Systematic: constant offset</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Precision ≠ accuracy. Repeatable ≠ reproducible</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Log graphs: ln y = n ln x + ln A (power law); ln y = kx + ln A (exponential)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Gradient uncertainty: draw steepest and shallowest lines through error bars</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--b)">Particles &amp; Radiation</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Proton = uud, Neutron = udd</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Up quark: Q=+⅔, B=⅓. Down quark: Q=−⅓, B=⅓</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>β⁻: n→p+e⁻+ν̄ₑ (W⁻ boson). β⁺: p→n+e⁺+νₑ (W⁺ boson)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Conservation laws: charge, baryon number, lepton number — check all three</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Strangeness: conserved in strong, can change ±1 in weak interactions</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Strong force: attractive 0.5–3 fm, repulsive below 0.5 fm, zero above ~3 fm</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Photoelectric: hf = φ + ½mv²max. No electrons below threshold frequency</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>de Broglie: λ = h/mv — NOT in booklet</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Energy levels: photon energy = difference between two levels = hf</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--b)">Waves</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>v = fλ. EM waves: v = c = 3×10⁸ ms⁻¹ in vacuum</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Stationary waves: nodes = zero amplitude, antinodes = max amplitude</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Formed by superposition of two identical waves travelling in opposite directions</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Diffraction grating: d sinθ = nλ. More slits → sharper, brighter maxima</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Young's slits: λ = ax/D (a = slit sep, x = fringe width, D = distance)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Refractive index: n = sin i / sin r = c/v. Critical angle: sin C = 1/n</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Polarisation is evidence that EM waves are transverse</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--b)">Mechanics &amp; Materials</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Impulse = FΔt = Δ(mv). Area under F-t graph = impulse</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Momentum always conserved in closed system</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Elastic collision: KE conserved. Inelastic: KE not conserved</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Hooke's law: F = kx up to elastic limit only</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Stress = F/A, Strain = ΔL/L, Young modulus E = stress/strain</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Elastic strain energy = ½Fx = ½kx² = area under F-x graph</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Projectile: horizontal (constant v) and vertical (a=g) are independent</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--b)">Electricity</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Kirchhoff 1: ΣI in = ΣI out at any junction</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Kirchhoff 2: ΣV = ΣEMF around any closed loop</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Internal resistance: ε = V + Ir. Terminal p.d. drops under load</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Potential divider: Vout = Vin × R₂/(R₁+R₂)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Resistivity: R = ρL/A. ρ increases with temperature for metals</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>I-V graphs: ohmic (straight line), filament lamp (curves), diode (threshold ~0.6V)</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sl">Paper 2 checklist</div>
+  <div class="check-grid">
+
+    <div class="check-card">
+      <h3 style="color:var(--g)">Further Mechanics &amp; Thermal</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Circular motion: v=ωr, a=v²/r=ω²r, centripetal F=mv²/r towards centre</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>SHM condition: a = −ω²x (restoring, proportional to displacement)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>x=Acosωt, v=−Aω sinωt, vmax=Aω at x=0, amax=Aω² at x=±A</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>T=2π√(m/k) for spring; T=2π√(l/g) for pendulum — NOT in booklet</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Resonance: max amplitude when driving freq = natural freq. Damping reduces peak</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Ideal gas: pV=nRT. Mean KE of molecule = 3/2 kT</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Q=mcΔT (specific heat capacity), Q=mL (specific latent heat)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--g)">Fields</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Gravitational: F=GMm/r², g=GM/r², V=−GM/r (always negative)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Electric: F=kQq/r², E=kQ/r², V=kQ/r (can be positive or negative)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Field lines always perpendicular to equipotentials. E=−dV/dr</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Capacitance C=Q/V. Parallel plates: C=ε₀εᵣA/d</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Discharge: Q=Q₀e^(−t/RC). τ=RC — NOT in booklet</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Magnetic force: F=BIl sinθ, F=Bqv sinθ. Use Fleming's left-hand rule</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Faraday: EMF=−NdΦ/dt. Lenz: induced current opposes the change</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--g)">Nuclear Physics</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>α decay: A−4, Z−2. β⁻: Z+1. β⁺: Z−1. γ: no change to A or Z</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>A=λN, λ=ln2/t½, N=N₀e^(−λt) — λ=ln2/t½ NOT in booklet</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Binding energy = mass defect × c². Higher BE/nucleon = more stable</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Fission: heavy nucleus splits. Fusion: light nuclei combine. Both release energy</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>1 eV = 1.6×10⁻¹⁹ J. 1 u = 1.661×10⁻²⁷ kg = 931.5 MeV/c²</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--g)">Astrophysics (common optional)</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Luminosity: L=4πr²σT⁴ (Stefan's law). Peak wavelength: λmaxT=2.9×10⁻³ m K (Wien)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Standard candles: Cepheid variables and Type 1a supernovae</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Hubble's law: v=H₀d. Age of universe ≈ 1/H₀ ≈ 13.8 billion years</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Redshift: z=(λobs−λrest)/λrest = v/c for v&lt;&lt;c</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>HR diagram: main sequence top-left (hot/bright) to bottom-right (cool/dim)</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sl">Paper 3 — practical (Section A)</div>
+  <div class="check-grid">
+    <div class="check-card" style="grid-column:1/-1">
+      <h3 style="color:var(--a)">Data analysis &amp; practical skills</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Products/quotients: add fractional uncertainties</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Power law y=Axⁿ: plot ln y vs ln x → gradient = n, y-intercept = ln A</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Exponential y=Ae^(kx): plot ln y vs x → gradient = k, y-intercept = ln A</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Uncertainty in gradient: steepest and shallowest lines through all error bars</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>State independent, dependent and control variables for every experiment</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Know all 12 required practicals: method, variables, errors, safety, physics</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Anomalous results: plot but exclude from best-fit line, state why</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Resolution ≠ uncertainty. Uncertainty ≈ ½ × smallest scale division</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sl">Universal exam technique</div>
+  <div class="check-grid">
+    <div class="check-card" style="grid-column:1/-1">
+      <h3 style="color:var(--a)">Every question, every time</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Read the command word first — State / Explain / Describe / Calculate mean different things</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Show that: show ALL steps — correct answer with no working = zero marks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>6-mark questions: define → explain mechanism → conclude. Vague answers score zero</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Always include units in final answer</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Check powers of 10 — a factor of 10 error still scores method marks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Write particle equations with full notation: mass number top, proton number bottom</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Never leave a blank — write an attempt for method marks</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Top marks lost — AQA examiner reports</div>
+    <b class="cr">Particle notation:</b> write ⁴₂He not just "alpha" — lost every year &nbsp;·&nbsp;
+    <b class="ca">SHM:</b> a=−ω²x — the negative sign IS the definition, never drop it &nbsp;·&nbsp;
+    <b class="cg">Gravitational V always negative.</b> g and G are different — g=GM/r² &nbsp;·&nbsp;
+    <b class="cb">Internal resistance:</b> biggest GCSE→A-level gap. Terminal p.d. drops under load &nbsp;·&nbsp;
+    <b class="cpk">Show that:</b> every step must be shown — correct answer, no working = zero &nbsp;·&nbsp;
+    <b class="cr">Energy levels:</b> photon energy = difference between levels, not value of one level &nbsp;·&nbsp;
+    <b class="ca">Momentum is a vector:</b> include direction. Sign errors cascade through all marks &nbsp;·&nbsp;
+    <b class="cg">τ=RC not in booklet.</b> Time to half = 0.693RC &nbsp;·&nbsp;
+    <b class="cb">Log graphs:</b> ln y vs ln x → gradient = n (power). ln y vs x → gradient = −λ &nbsp;·&nbsp;
+    <b class="cpk">6-mark questions:</b> structure matters as much as content
+  </div>
+
+</div>
+
+<!-- ══════ PARTICLES ══════ -->
+<div id="particles" class="panel">
+
+  <div class="sl">Quark compositions</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Proton</div><div class="pl-f">uud &nbsp; Q=+1 &nbsp; B=1</div></div>
+    <div class="pl"><div class="pl-l cb">Neutron</div><div class="pl-f">udd &nbsp; Q=0 &nbsp; B=1</div></div>
+    <div class="pl"><div class="pl-l cb">Up quark u</div><div class="pl-f">Q=+⅔ &nbsp; B=⅓ &nbsp; S=0</div></div>
+    <div class="pl"><div class="pl-l cb">Down quark d</div><div class="pl-f">Q=−⅓ &nbsp; B=⅓ &nbsp; S=0</div></div>
+    <div class="pl"><div class="pl-l cb">Strange quark s</div><div class="pl-f">Q=−⅓ &nbsp; B=⅓ &nbsp; S=−1</div></div>
+    <div class="pl"><div class="pl-l cg">Antiparticles</div><div class="pl-f">All values negated</div><div class="pl-n">e.g. ū has Q=−⅔, B=−⅓</div></div>
+  </div>
+
+  <div class="sl">Decay equations</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">β⁻ decay</span></div>
+      <div class="mb">n → p + e⁻ + ν̄ₑ
+d → u + e⁻ + ν̄ₑ (quark level)
+Exchange boson: W⁻</div>
+      <div class="tip">Baryon no.: 1=1+0+0 ✓ &nbsp; Lepton no.: 0=0+1+(−1) ✓ &nbsp; Charge: 0=1+(−1)+0 ✓</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">β⁺ decay</span></div>
+      <div class="mb">p → n + e⁺ + νₑ
+u → d + e⁺ + νₑ (quark level)
+Exchange boson: W⁺</div>
+      <div class="tip">Always check: charge, baryon number AND lepton number all conserved</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Electron capture</span></div>
+      <div class="mb">p + e⁻ → n + νₑ
+Exchange boson: W⁺</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Electron-positron annihilation</span></div>
+      <div class="mb">e⁻ + e⁺ → 2γ
+Each photon: E = mₑc²</div>
+      <div class="tip">Two photons needed to conserve momentum</div>
+    </div>
+  </div>
+
+  <div class="sl">Conservation laws — check every interaction</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l ca">Charge Q</div><div class="pl-n">Always conserved in every interaction</div></div>
+    <div class="pl"><div class="pl-l ca">Baryon number B</div><div class="pl-n">Always conserved</div></div>
+    <div class="pl"><div class="pl-l ca">Lepton number L</div><div class="pl-n">Always conserved (separately for each lepton family)</div></div>
+    <div class="pl"><div class="pl-l cg">Strangeness S</div><div class="pl-n">Conserved in strong &amp; EM. Can change ±1 in weak only</div></div>
+    <div class="pl"><div class="pl-l cr">Energy &amp; momentum</div><div class="pl-n">Always conserved</div></div>
+  </div>
+
+  <div class="sl">Forces and exchange bosons</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Strong nuclear</div><div class="pl-f">Gluon</div><div class="pl-n">Acts on quarks/hadrons. Range ~3 fm</div></div>
+    <div class="pl"><div class="pl-l cg">Weak nuclear</div><div class="pl-f">W⁺, W⁻, Z⁰</div><div class="pl-n">β decay, neutrino interactions. Very short range</div></div>
+    <div class="pl"><div class="pl-l ca">Electromagnetic</div><div class="pl-f">Photon (γ)</div><div class="pl-n">Acts on charged particles. Infinite range</div></div>
+    <div class="pl"><div class="pl-l cr">Gravity</div><div class="pl-f">Graviton (theoretical)</div><div class="pl-n">Acts on all mass. Infinite range</div></div>
+  </div>
+
+  <div class="sl">Photoelectric effect &amp; quantum</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Key equations</span></div>
+    <div class="mb">E = hf = hc/λ
+hf = φ + ½mv²max (photoelectric equation)
+λ = h/mv (de Broglie — memorise)
+1 eV = 1.6×10⁻¹⁹ J</div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">1</div><span>No electrons emitted below threshold frequency f₀ = φ/h regardless of intensity</span></div>
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">2</div><span>Intensity increases number of photoelectrons — not their max KE</span></div>
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">3</div><span>Higher frequency → higher max KE (steeper line on KE vs f graph)</span></div>
+    </div>
+  </div>
+
+  <div class="sl">Energy levels</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Emission &amp; absorption spectra</span></div>
+    <div class="mb">Photon energy = E₁ − E₂ = hf
+(energy of higher level minus lower level)</div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--b);color:#000">↑</div><span>Excitation: electron absorbs photon of exact energy, moves to higher level</span></div>
+      <div class="step"><div class="sn" style="background:var(--b);color:#000">↓</div><span>De-excitation: electron drops back, emits photon. Energy = level difference</span></div>
+      <div class="step"><div class="sn" style="background:var(--b);color:#000">∞</div><span>Ionisation: electron removed completely. Energy ≥ ionisation energy from ground state</span></div>
+    </div>
+    <div class="tip">Ground state is most negative. Ionisation energy = 0 − (ground state energy)</div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Particles exam traps</div>
+    <b class="cr">Full nuclear notation:</b> always write ᴬzX with mass number AND proton number &nbsp;·&nbsp;
+    <b class="ca">Neutrino vs antineutrino:</b> β⁻ produces antineutrino (ν̄ₑ), β⁺ produces neutrino (νₑ) &nbsp;·&nbsp;
+    <b class="cg">Photon energy:</b> E = hf not E = hf/2 — common slip &nbsp;·&nbsp;
+    <b class="cb">Energy levels:</b> photon energy = DIFFERENCE between levels. Not the value of one level &nbsp;·&nbsp;
+    <b class="cpk">de Broglie NOT in booklet:</b> λ=h/mv — write it in your notes now
+  </div>
+</div>
+
+<!-- ══════ WAVES ══════ -->
+<div id="waves" class="panel">
+
+  <div class="sl">Core equations</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Wave speed</div><div class="pl-f">v = fλ</div></div>
+    <div class="pl"><div class="pl-l cb">Period</div><div class="pl-f">T = 1/f</div></div>
+    <div class="pl"><div class="pl-l cg">Diffraction grating</div><div class="pl-f">d sinθ = nλ</div><div class="pl-n">d = slit spacing = 1/N</div></div>
+    <div class="pl"><div class="pl-l cg">Young's slits</div><div class="pl-f">λ = ax/D</div><div class="pl-n">a=slit sep, x=fringe width, D=dist</div></div>
+    <div class="pl"><div class="pl-l ca">Snell's law</div><div class="pl-f">n₁ sinθ₁ = n₂ sinθ₂</div></div>
+    <div class="pl"><div class="pl-l ca">Refractive index</div><div class="pl-f">n = sin i / sin r = c/v</div></div>
+    <div class="pl"><div class="pl-l cr">Critical angle</div><div class="pl-f">sin C = 1/n</div><div class="pl-n">TIR when θ &gt; C</div></div>
+  </div>
+
+  <div class="sl">Stationary waves</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Formation &amp; features</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Formed by superposition of two identical waves travelling in opposite directions</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Nodes: points of zero amplitude (destructive superposition always)</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>Antinodes: points of maximum amplitude (constructive superposition always)</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>Adjacent node-to-node distance = λ/2</span></div>
+    </div>
+    <div class="mb">Fundamental (1st harmonic): L = λ/2 → f₁ = v/2L
+2nd harmonic: L = λ → f₂ = v/L = 2f₁
+nth harmonic: fₙ = nf₁</div>
+    <div class="tip">In stationary waves, all points between two nodes are in phase with each other but in antiphase with points in the next section</div>
+  </div>
+
+  <div class="sl">Interference &amp; diffraction</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Diffraction grating</span></div>
+      <div class="mb">d sinθ = nλ &nbsp;&nbsp; d = 1/N (N = lines per metre)</div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">↑</div><span>More lines per mm → smaller d → larger θ (wider spread)</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">↑</div><span>Longer λ (red) diffracts more than shorter λ (violet)</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">n</div><span>Maximum order when sinθ = 1: n_max = d/λ (round down)</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Young's double slit</span></div>
+      <div class="mb">λ = ax/D</div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">+</div><span>Constructive: path difference = nλ</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">−</div><span>Destructive: path difference = (n+½)λ</span></div>
+        <div class="step"><div class="sn" style="background:var(--pk);color:#fff">↑</div><span>Increase D or decrease a → wider fringes</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Waves exam traps</div>
+    <b class="cr">Stationary vs progressive:</b> stationary waves store energy; progressive waves transfer it &nbsp;·&nbsp;
+    <b class="ca">Node spacing:</b> adjacent nodes are λ/2 apart — not λ &nbsp;·&nbsp;
+    <b class="cg">Diffraction grating d:</b> d = 1/N where N is lines per metre, not per mm — watch units &nbsp;·&nbsp;
+    <b class="cb">Young's slits:</b> a is slit separation (not width), x is fringe spacing (centre to centre) &nbsp;·&nbsp;
+    <b class="cpk">TIR condition:</b> must go from denser to less dense medium AND angle must exceed critical angle — both needed
+  </div>
+</div>
+
+<!-- ══════ MECHANICS ══════ -->
+<div id="mechanics" class="panel">
+
+  <div class="sl">Core equations</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Momentum</div><div class="pl-f">p = mv</div></div>
+    <div class="pl"><div class="pl-l cb">Newton 2</div><div class="pl-f">F = Δp/Δt = ma</div></div>
+    <div class="pl"><div class="pl-l cb">Impulse</div><div class="pl-f">J = FΔt = Δp</div></div>
+    <div class="pl"><div class="pl-l cg">Work done</div><div class="pl-f">W = Fs cosθ</div></div>
+    <div class="pl"><div class="pl-l cg">KE</div><div class="pl-f">½mv²</div></div>
+    <div class="pl"><div class="pl-l cg">GPE</div><div class="pl-f">mgh</div></div>
+    <div class="pl"><div class="pl-l ca">Power</div><div class="pl-f">P = Fv = W/t</div></div>
+    <div class="pl"><div class="pl-l ca">Efficiency</div><div class="pl-f">useful out / total in</div></div>
+    <div class="pl"><div class="pl-l cr">Hooke's law</div><div class="pl-f">F = kx</div></div>
+    <div class="pl"><div class="pl-l cr">Elastic PE</div><div class="pl-f">E = ½kx²</div></div>
+    <div class="pl"><div class="pl-l cpk">Stress</div><div class="pl-f">σ = F/A</div></div>
+    <div class="pl"><div class="pl-l cpk">Strain</div><div class="pl-f">ε = ΔL/L</div></div>
+    <div class="pl"><div class="pl-l cpk">Young modulus</div><div class="pl-f">E = σ/ε</div></div>
+  </div>
+
+  <div class="sl">SHM &amp; circular motion</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Simple Harmonic Motion</span></div>
+      <div class="mb">a = −ω²x (defining equation — memorise)
+x = A cosωt &nbsp;&nbsp; v = −Aω sinωt
+vmax = Aω (at x = 0)
+amax = Aω² (at x = ±A)
+T = 2π√(m/k) &nbsp;&nbsp; T = 2π√(l/g)</div>
+      <div class="tip">KE max at centre (x=0), PE max at extremes (x=±A). Total energy = ½mω²A² = constant</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Circular Motion</span></div>
+      <div class="mb">v = ωr &nbsp;&nbsp; T = 2π/ω
+a = v²/r = ω²r (centripetal, towards centre)
+F = mv²/r = mω²r</div>
+      <div class="tip">Centripetal force is not a separate force — it's the resultant of real forces (tension, gravity, normal reaction etc.) directed towards the centre</div>
+    </div>
+  </div>
+
+  <div class="sl">Projectile motion</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Horizontal and vertical are independent</span></div>
+    <div class="two" style="margin-top:8px">
+      <div class="mb">Horizontal (constant v):
+x = v cosθ · t</div>
+      <div class="mb">Vertical (a = g = 9.81):
+y = v sinθ · t − ½gt²
+vy = v sinθ − gt</div>
+    </div>
+    <div class="tip">At max height: vertical velocity = 0. Time of flight: solve y=0. Range: x at that time</div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Mechanics exam traps</div>
+    <b class="cr">Momentum is a vector:</b> always include direction / sign &nbsp;·&nbsp;
+    <b class="ca">Elastic vs inelastic:</b> momentum always conserved — only KE conservation distinguishes elastic &nbsp;·&nbsp;
+    <b class="cg">SHM: a=−ω²x</b> — negative sign defines it as SHM, must be included &nbsp;·&nbsp;
+    <b class="cb">Centripetal force:</b> not a new force — it's the resultant. Never add it as an extra force in a diagram &nbsp;·&nbsp;
+    <b class="cpk">Young modulus:</b> units are Pa (= Nm⁻²). E = stress/strain — strain has no units
+  </div>
+</div>
+
+<!-- ══════ ELECTRICITY ══════ -->
+<div id="electricity" class="panel">
+
+  <div class="sl">Core equations</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Ohm's law</div><div class="pl-f">V = IR</div></div>
+    <div class="pl"><div class="pl-l cb">Power</div><div class="pl-f">P = IV = I²R = V²/R</div></div>
+    <div class="pl"><div class="pl-l cb">Charge</div><div class="pl-f">Q = It</div></div>
+    <div class="pl"><div class="pl-l cg">Resistivity</div><div class="pl-f">R = ρL/A</div></div>
+    <div class="pl"><div class="pl-l cg">Series R</div><div class="pl-f">R = R₁+R₂+...</div></div>
+    <div class="pl"><div class="pl-l cg">Parallel R</div><div class="pl-f">1/R = 1/R₁+1/R₂+...</div></div>
+    <div class="pl"><div class="pl-l ca">EMF</div><div class="pl-f">ε = V + Ir</div></div>
+    <div class="pl"><div class="pl-l ca">Pot. divider</div><div class="pl-f">Vout = Vin·R₂/(R₁+R₂)</div></div>
+  </div>
+
+  <div class="sl">Kirchhoff's laws</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Kirchhoff's 1st Law</span></div>
+      <div class="mb">ΣI_in = ΣI_out at any junction</div>
+      <div class="tip">Conservation of charge. Current doesn't "run out" — it splits and rejoins</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Kirchhoff's 2nd Law</span></div>
+      <div class="mb">ΣV = ΣEMF around any closed loop</div>
+      <div class="tip">Conservation of energy. Sum of p.d.s across components = sum of EMFs in loop</div>
+    </div>
+  </div>
+
+  <div class="sl">Internal resistance</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">ε = V + Ir</span></div>
+    <div class="mb">ε = EMF (open circuit voltage)
+V = terminal p.d. (voltage across external circuit)
+Ir = "lost volts" across internal resistance</div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">1</div><span>Plot V vs I: gradient = −r, y-intercept = ε</span></div>
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">2</div><span>Terminal p.d. drops as current increases (more lost volts)</span></div>
+      <div class="step"><div class="sn" style="background:var(--pk);color:#fff">3</div><span>Short circuit current = ε/r (when V = 0)</span></div>
+    </div>
+    <div class="tip"><b class="cb">This is the biggest conceptual step from GCSE</b> — examiners report it as a top-5 gap every year</div>
+  </div>
+
+  <div class="sl">I-V characteristics</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Ohmic resistor</div><div class="pl-n">Straight line through origin. Constant resistance</div></div>
+    <div class="pl"><div class="pl-l cg">Filament lamp</div><div class="pl-n">S-shaped curve. R increases as temperature increases</div></div>
+    <div class="pl"><div class="pl-l cg">Diode</div><div class="pl-n">Conducts above ~0.6V forward bias. Blocks in reverse (until breakdown)</div></div>
+    <div class="pl"><div class="pl-l ca">NTC thermistor</div><div class="pl-n">Resistance decreases as temperature increases</div></div>
+    <div class="pl"><div class="pl-l ca">LDR</div><div class="pl-n">Resistance decreases as light intensity increases</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Electricity exam traps</div>
+    <b class="cr">EMF ≠ voltage:</b> EMF is energy per unit charge from the source. Terminal p.d. is less due to internal resistance &nbsp;·&nbsp;
+    <b class="ca">Parallel circuits:</b> voltage is the same across parallel branches, current splits &nbsp;·&nbsp;
+    <b class="cg">Power formula choice:</b> use P=I²R when you know I and R; use P=V²/R when you know V and R &nbsp;·&nbsp;
+    <b class="cb">Resistivity units:</b> Ω m (not Ω/m or Ω m⁻¹)
+  </div>
+</div>
+
+<!-- ══════ FIELDS ══════ -->
+<div id="fields" class="panel">
+
+  <div class="sl">Gravitational fields</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Force</div><div class="pl-f">F = GMm/r²</div></div>
+    <div class="pl"><div class="pl-l cb">Field strength</div><div class="pl-f">g = GM/r² = F/m</div></div>
+    <div class="pl"><div class="pl-l cb">Potential</div><div class="pl-f">V = −GM/r</div><div class="pl-n">Always negative</div></div>
+    <div class="pl"><div class="pl-l cb">PE</div><div class="pl-f">E = −GMm/r</div></div>
+    <div class="pl"><div class="pl-l cb">Orbital speed</div><div class="pl-f">v² = GM/r</div></div>
+    <div class="pl"><div class="pl-l cb">Kepler 3rd law</div><div class="pl-f">T² ∝ r³ &nbsp; T²=4π²r³/GM</div></div>
+  </div>
+
+  <div class="sl">Electric fields</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Force</div><div class="pl-f">F = kQq/r² = Qq/4πε₀r²</div></div>
+    <div class="pl"><div class="pl-l cg">Field strength</div><div class="pl-f">E = kQ/r² (radial)<br>E = V/d (uniform)</div></div>
+    <div class="pl"><div class="pl-l cg">Potential</div><div class="pl-f">V = kQ/r</div><div class="pl-n">Can be +/−</div></div>
+    <div class="pl"><div class="pl-l cg">PE</div><div class="pl-f">E = kQq/r</div></div>
+    <div class="pl"><div class="pl-l cg">Relation</div><div class="pl-f">E = −dV/dr</div><div class="pl-n">Field = −potential gradient</div></div>
+  </div>
+
+  <div class="sl">Capacitors</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Capacitance &amp; energy</span></div>
+      <div class="mb">C = Q/V &nbsp;&nbsp; C = ε₀εᵣA/d
+W = ½QV = ½CV² = Q²/2C
+(energy stored — NOT in booklet)</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Charge/discharge</span></div>
+      <div class="mb">Q = Q₀e^(−t/RC) &nbsp;&nbsp; τ = RC
+Time to half: t½ = 0.693RC
+ln Q = ln Q₀ − t/RC</div>
+      <div class="tip">τ=RC NOT in booklet. Plot ln Q vs t → gradient = −1/RC</div>
+    </div>
+  </div>
+
+  <div class="sl">Magnetic fields</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">Force on current &amp; charge</span></div>
+      <div class="mb">F = BIl sinθ (wire in field)
+F = Bqv sinθ (charge in field)
+(NOT in booklet)</div>
+      <div class="tip">Fleming's left-hand rule: thuMb=Motion, First=Field, seCond=Current</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">Electromagnetic induction</span></div>
+      <div class="mb">Flux: Φ = BA cosθ
+Flux linkage: NΦ = NBA cosθ
+Faraday: EMF = −NdΦ/dt</div>
+      <div class="tip">Lenz's law: induced current direction always opposes the change that caused it</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Fields exam traps</div>
+    <b class="cr">Gravitational potential always negative:</b> V=−GM/r — positive values are wrong &nbsp;·&nbsp;
+    <b class="ca">g vs G:</b> g=GM/r² (field strength, ms⁻²). G=6.67×10⁻¹¹ (constant, Nm²kg⁻²) &nbsp;·&nbsp;
+    <b class="cg">Capacitor energy NOT in booklet:</b> W=½CV² — memorise it &nbsp;·&nbsp;
+    <b class="cb">τ=RC NOT in booklet</b> — must memorise &nbsp;·&nbsp;
+    <b class="cpk">E=−dV/dr:</b> field points from high to low potential (in direction of decreasing V)
+  </div>
+</div>
+
+<!-- ══════ NUCLEAR ══════ -->
+<div id="nuclear" class="panel">
+
+  <div class="sl">Radioactive decay</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Activity</div><div class="pl-f">A = λN</div></div>
+    <div class="pl"><div class="pl-l cb">Decay constant</div><div class="pl-f">λ = ln2/t½</div><div class="pl-n">NOT in booklet</div></div>
+    <div class="pl"><div class="pl-l cb">N over time</div><div class="pl-f">N = N₀e^(−λt)</div></div>
+    <div class="pl"><div class="pl-l cb">A over time</div><div class="pl-f">A = A₀e^(−λt)</div></div>
+    <div class="pl"><div class="pl-l cg">Half-life</div><div class="pl-f">t½ = ln2/λ = 0.693/λ</div></div>
+    <div class="pl"><div class="pl-l cg">Nuclear radius</div><div class="pl-f">R = R₀A^(1/3)</div><div class="pl-n">R₀ ≈ 1.2–1.3 fm</div></div>
+  </div>
+
+  <div class="sl">Decay types</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l ca">Alpha α</div><div class="pl-f">ᴬzX → ᴬ⁻⁴z₋₂Y + ⁴₂He</div><div class="pl-n">Range ~5 cm in air. Stopped by paper</div></div>
+    <div class="pl"><div class="pl-l ca">Beta⁻ β⁻</div><div class="pl-f">ᴬzX → ᴬz₊₁Y + e⁻ + ν̄ₑ</div><div class="pl-n">Range ~1 m in air. Stopped by 3 mm Al</div></div>
+    <div class="pl"><div class="pl-l ca">Beta⁺ β⁺</div><div class="pl-f">ᴬzX → ᴬz₋₁Y + e⁺ + νₑ</div><div class="pl-n">Stopped by thin aluminium</div></div>
+    <div class="pl"><div class="pl-l ca">Gamma γ</div><div class="pl-f">No change to A or Z</div><div class="pl-n">Reduced by lead/thick concrete</div></div>
+  </div>
+
+  <div class="sl">Mass defect &amp; binding energy</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">E = mc²</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Mass defect Δm = mass of separate nucleons − mass of nucleus</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Binding energy = Δm × c². Convert to MeV: multiply by 931.5 MeV/u</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>BE per nucleon peaks at Fe-56 → most stable nucleus</span></div>
+      <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>Fission (heavy nuclei) and fusion (light nuclei) both move towards peak → release energy</span></div>
+    </div>
+    <div class="tip">1 u = 1.661×10⁻²⁷ kg = 931.5 MeV/c². Always check units before substituting into E=mc²</div>
+  </div>
+
+  <div class="sl">Fission &amp; fusion</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Nuclear fission</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">1</div><span>Heavy nucleus (e.g. U-235) absorbs a slow neutron</span></div>
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">2</div><span>Splits into two smaller nuclei + 2–3 neutrons + energy</span></div>
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">3</div><span>Chain reaction: neutrons trigger further fissions</span></div>
+      </div>
+      <div class="tip">Moderator slows neutrons (water/graphite). Control rods absorb neutrons (boron)</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Nuclear fusion</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">1</div><span>Two light nuclei (e.g. H-2 + H-3) combine</span></div>
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">2</div><span>Form heavier nucleus + neutron + large energy release</span></div>
+        <div class="step"><div class="sn" style="background:var(--r);color:#fff">3</div><span>Requires extremely high temperature to overcome electrostatic repulsion</span></div>
+      </div>
+      <div class="tip">More energy per kg than fission. The sun's energy source. Difficult to achieve on Earth (plasma confinement)</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Nuclear exam traps</div>
+    <b class="cr">λ=ln2/t½ not in booklet</b> — memorise it &nbsp;·&nbsp;
+    <b class="ca">Full decay notation:</b> always write ᴬzX with both numbers — losing one loses the mark &nbsp;·&nbsp;
+    <b class="cg">Unit conversions:</b> convert u to kg (×1.661×10⁻²⁷) OR use 931.5 MeV/c² — don't mix &nbsp;·&nbsp;
+    <b class="cb">BE per nucleon vs total BE:</b> graph of BE/nucleon peaks at Fe-56. Total BE increases with A &nbsp;·&nbsp;
+    <b class="cpk">Activity units:</b> Becquerel (Bq) = decays per second. Don't leave answer as a bare number
+  </div>
+</div>
+
+<!-- ══════ PRACTICAL ══════ -->
+<div id="practical" class="panel">
+
+  <div class="sl">12 required practicals — method, key variables &amp; errors</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P1 — Stationary waves on a string</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Independent: frequency (signal gen). Dependent: wavelength (node positions)</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>Measure node-node distance × 2 for λ. Use ruler — parallax error</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P2 — Speed of sound in air</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Resonance tube: find first resonance at L ≈ λ/4. v = fλ</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>End correction: actual resonance at L + 0.3d above opening</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P3 — Refraction in glass block</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Vary angle of incidence i, measure angle of refraction r</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>Plot sin i vs sin r → gradient = n. Measure angles with protractor carefully</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P4 — Young's slits / diffraction grating</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Measure fringe spacing x at different D values</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>Use travelling microscope for x. Dark room. Average multiple fringes</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P5 — I-V characteristics</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Vary voltage, measure current. Reverse connections for negative values</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>Ammeter in series. Voltmeter in parallel. Allow component to cool between readings</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">P6 — Resistivity of a wire</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">V</div><span>Vary length L, measure R. Plot R vs L → gradient = ρ/A</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">E</div><span>Measure diameter with micrometer (multiple places). A = πd²/4</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">P7 — EMF &amp; internal resistance</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">V</div><span>Vary external resistance R, measure V and I</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">E</div><span>Plot V vs I → gradient = −r, y-intercept = ε. Low current to protect battery</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">P8 — Free fall (g measurement)</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">V</div><span>Drop ball from height h, measure time t. Plot h vs t² → gradient = g/2</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">E</div><span>Reaction time error — use electromagnet release and light gate</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">P9 — Young modulus (wire)</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">V</div><span>Add masses, measure extension. Plot stress vs strain → gradient = E</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">E</div><span>Long wire reduces % uncertainty in extension. Micrometer for diameter</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">P10 — SHM (spring &amp; pendulum)</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">V</div><span>Vary mass (spring) or length (pendulum), measure T. Plot T² vs m or l</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">E</div><span>Time 10+ oscillations to reduce timing uncertainty</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">P11 — Specific heat capacity</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">V</div><span>Apply known power P for time t: E=Pt=mcΔT. Plot T vs t → gradient = P/mc</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">E</div><span>Insulate block to reduce heat loss. Stir liquid. Thermometer calibration</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">P12 — Capacitor charge/discharge</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">V</div><span>Record V or I vs t during discharge. Plot ln V vs t → gradient = −1/RC</span></div>
+        <div class="step"><div class="sn" style="background:var(--a);color:#000">E</div><span>Use datalogger for fast decay. High-resistance voltmeter so it doesn't discharge the capacitor</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Data analysis techniques</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Linearising graphs</span></div>
+      <div class="mb">Power law: y = Axⁿ
+→ ln y = n ln x + ln A
+(plot ln y vs ln x, gradient = n)
+
+Exponential: y = Ae^(kx)
+→ ln y = kx + ln A
+(plot ln y vs x, gradient = k)</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Uncertainty rules</span></div>
+      <div class="mb">Add/subtract: add ABSOLUTE uncertainties
+Multiply/divide: add % uncertainties
+Power n: multiply % uncertainty by n
+Gradient: Δm = (m_max − m_min)/2</div>
+      <div class="tip">Resolution of instrument ≈ half the smallest scale division. State it explicitly</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Practical exam traps</div>
+    <b class="cr">Log graph gradient:</b> ln y vs ln x → gradient = power n. ln y vs x → gradient = −λ or k &nbsp;·&nbsp;
+    <b class="ca">Anomalous points:</b> still plot them, just don't include in best-fit line — state they were excluded &nbsp;·&nbsp;
+    <b class="cg">Uncertainty not resolution:</b> uncertainty in a reading is typically ±½ smallest division &nbsp;·&nbsp;
+    <b class="cb">Control variables:</b> must be able to name at least 2–3 for any experiment asked about &nbsp;·&nbsp;
+    <b class="cpk">Required practicals in context:</b> Section A questions often describe an unfamiliar version — apply the same principles
+  </div>
+
+  <div class="callout">
+    <div class="c-title">Physics command words</div>
+    <b class="cb">State:</b> one-line fact, no explanation &nbsp;·&nbsp;
+    <b class="cg">Explain:</b> give the mechanism — WHY not just WHAT &nbsp;·&nbsp;
+    <b class="ca">Describe:</b> say what happens including direction/magnitude &nbsp;·&nbsp;
+    <b class="cr">Show that:</b> show all working clearly — never work backwards &nbsp;·&nbsp;
+    <b class="cpk">Calculate:</b> substitution, working, answer, units &nbsp;·&nbsp;
+    <b class="cp">Suggest:</b> apply known physics principles to an unfamiliar context
+  </div>
+
+</div>
+
+</div>
+<script src="physics.js"></script>
+</body>
+</html>
