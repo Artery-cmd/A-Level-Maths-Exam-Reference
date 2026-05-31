@@ -39,12 +39,12 @@
     <div class="nib-t">📋 Paper structure</div>
     <b class="cb">Paper 1 (2 hrs, 85 marks):</b> Measurements &amp; errors · Particles &amp; radiation · Waves · Mechanics &amp; materials · Electricity &nbsp;·&nbsp;
     <b class="cg">Paper 2 (2 hrs, 85 marks):</b> Further mechanics · Thermal physics · Fields · Nuclear physics · Optional topic &nbsp;·&nbsp;
-    <b class="ca">Paper 3 (2 hrs, 80 marks):</b> Section A — practical skills &amp; data analysis · Section B — optional topic
+    <b class="ca">Paper 3 (2 hrs, 85 (50 + 35) marks):</b> Section A — practical skills &amp; data analysis · Section B — optional topic
   </div>
 
   <div class="nib" style="background:rgba(232,212,77,.06);border-color:rgba(232,212,77,.18)">
-    <div class="nib-t" style="color:var(--ye)">⚡ NOT in the data booklet — memorise these</div>
-    de Broglie: λ=h/mv &nbsp;·&nbsp; Time constant: τ=RC &nbsp;·&nbsp; Circular: v=ωr, a=ω²r &nbsp;·&nbsp; SHM: a=−ω²x, x=Acosωt, vmax=Aω &nbsp;·&nbsp; T=2π√(m/k), T=2π√(l/g) &nbsp;·&nbsp; g=GM/r² &nbsp;·&nbsp; Capacitor energy: W=½QV=½CV²=Q²/2C &nbsp;·&nbsp; F=BIl, F=Bqv &nbsp;·&nbsp; λ=ln2/t½ &nbsp;·&nbsp; E=mc²
+    <div class="nib-t" style="color:var(--ye)">NOT in the data booklet — memorise these</div>
+     ε = I(R + r) &nbsp;·&nbsp; &radic;<span style="text-decoration: overline;">gm</span>/r &nbsp;·&nbsp; λ=ln2/t½ &nbsp;·&nbsp; Q=Q/m
   </div>
 
   <div class="sl">Paper 1 checklist</div>
@@ -117,13 +117,8 @@
       </ul>
     </div>
 
-  </div>
-
-  <div class="sl">Paper 2 checklist</div>
-  <div class="check-grid">
-
-    <div class="check-card">
-      <h3 style="color:var(--g)">Further Mechanics &amp; Thermal</h3>
+     <div class="check-card">
+      <h3 style="color:var(--g)">Further Mechanics </h3>
       <ul class="cl">
         <li><input type="checkbox" onchange="tick(this)"><span>Circular motion: v=ωr, a=v²/r=ω²r, centripetal F=mv²/r towards centre</span></li>
         <li><input type="checkbox" onchange="tick(this)"><span>SHM condition: a = −ω²x (restoring, proportional to displacement)</span></li>
@@ -134,7 +129,23 @@
         <li><input type="checkbox" onchange="tick(this)"><span>Q=mcΔT (specific heat capacity), Q=mL (specific latent heat)</span></li>
       </ul>
     </div>
+  </div>
 
+  <div class="sl">Paper 2 checklist</div>
+  <div class="check-grid">
+
+    <div class="check-card">
+      <h3 style="color:var(--g)"> Thermal Physics</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Ideal gas: pV=nRT. Mean KE of molecule = 3/2 kT</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Q=mcΔT (specific heat capacity), Q=mL (specific latent heat)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Kinetic Theory Assumptions: Elastic Collision, Random Motion, Negligible Volume, etc</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Internal Energy = Kinetic + Potential; Temperature = Measure of Kinetic Energy</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Deriving Kinetic Theory Equation: pV = <sup>1</sup>&frasl;<sub>3</sub> Nm &lang;c<sup>2</sup>&rang;</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Using n=N/NA=m/M and k=R/NA; Brownian motion &mdash Random motion of particles due to surrounding particles</span></li>
+      </ul>
+    </div>
+    
     <div class="check-card">
       <h3 style="color:var(--g)">Fields</h3>
       <ul class="cl">
@@ -158,18 +169,6 @@
         <li><input type="checkbox" onchange="tick(this)"><span>1 eV = 1.6×10⁻¹⁹ J. 1 u = 1.661×10⁻²⁷ kg = 931.5 MeV/c²</span></li>
       </ul>
     </div>
-
-    <div class="check-card">
-      <h3 style="color:var(--g)">Astrophysics (common optional)</h3>
-      <ul class="cl">
-        <li><input type="checkbox" onchange="tick(this)"><span>Luminosity: L=4πr²σT⁴ (Stefan's law). Peak wavelength: λmaxT=2.9×10⁻³ m K (Wien)</span></li>
-        <li><input type="checkbox" onchange="tick(this)"><span>Standard candles: Cepheid variables and Type 1a supernovae</span></li>
-        <li><input type="checkbox" onchange="tick(this)"><span>Hubble's law: v=H₀d. Age of universe ≈ 1/H₀ ≈ 13.8 billion years</span></li>
-        <li><input type="checkbox" onchange="tick(this)"><span>Redshift: z=(λobs−λrest)/λrest = v/c for v&lt;&lt;c</span></li>
-        <li><input type="checkbox" onchange="tick(this)"><span>HR diagram: main sequence top-left (hot/bright) to bottom-right (cool/dim)</span></li>
-      </ul>
-    </div>
-
   </div>
 
   <div class="sl">Paper 3 — practical (Section A)</div>
@@ -189,6 +188,17 @@
     </div>
   </div>
 
+   <div class="check-card">
+      <h3 style="color:var(--g)">Astrophysics (common optional)</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Luminosity: L=4πr²σT⁴ (Stefan's law). Peak wavelength: λmaxT=2.9×10⁻³ m K (Wien)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Standard candles: Cepheid variables and Type 1a supernovae</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Hubble's law: v=H₀d. Age of universe ≈ 1/H₀ ≈ 13.8 billion years</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Redshift: z=(λobs−λrest)/λrest = v/c for v&lt;&lt;c</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>HR diagram: main sequence top-left (hot/bright) to bottom-right (cool/dim)</span></li>
+      </ul>
+    </div>
+  
   <div class="sl">Universal exam technique</div>
   <div class="check-grid">
     <div class="check-card" style="grid-column:1/-1">
