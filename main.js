@@ -1,353 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AQA A-Level — Quick Reference</title>
-<link rel="stylesheet" href="style.css">
-<style>
-  .home-wrap {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1.25rem;
-    position: relative;
-    z-index: 1;
-  }
+/**
+ * show — switch active panel and highlight the clicked nav button
+ * @param {string} id      - panel element id
+ * @param {HTMLElement} btn - the nav button that was clicked
+ * @param {string} cssVar  - CSS custom property name e.g. '--p'
+ */
+function show(id, btn, cssVar) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nb').forEach(b => {
+    b.classList.remove('on');
+    b.style.background = 'transparent';
+    b.style.color = '';
+  });
 
-  .home-hdr {
-    text-align: center;
-    margin-bottom: 3.5rem;
-    animation: up .5s ease both;
-  }
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
 
-  .home-eye {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--p);
-    margin-bottom: .75rem;
-  }
+  const col = getComputedStyle(document.documentElement).getPropertyValue(cssVar).trim();
+  btn.style.background = col;
+  btn.style.color = '#fff';
+}
 
-  .home-hdr h1 {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: -.02em;
-    margin-bottom: .6rem;
-  }
+/**
+ * tick — mark a checklist item as done and refresh the progress bar
+ * @param {HTMLInputElement} el - the checkbox that changed
+ */
+function tick(el) {
+  el.closest('li').classList.toggle('done', el.checked);
+  updateProg();
+}
 
-  .home-hdr h1 em {
-    font-style: italic;
-    color: var(--p);
-  }
+/**
+ * updateProg — recalculate and render the checklist progress bar
+ */
+function updateProg() {
+  const all  = document.querySelectorAll('#checklist input[type="checkbox"]');
+  const done = document.querySelectorAll('#checklist input[type="checkbox"]:checked');
+  const pct  = all.length ? Math.round(done.length / all.length * 100) : 0;
 
-  .home-hdr p {
-    font-size: 13px;
-    color: var(--mu);
-    font-weight: 300;
-  }
+  document.getElementById('pbar').style.width = pct + '%';
+  document.getElementById('plabel').textContent =
+    done.length + ' / ' + all.length + ' checked (' + pct + '%)';
+}
 
-  /* Subject cards */
-  .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    width: 100%;
-    max-width: 720px;
-    animation: up .5s .1s ease both;
-  }
-
-  @media (max-width: 560px) {
-    .cards { grid-template-columns: 1fr; }
-  }
-
-  .subject-card {
-    display: block;
-    text-decoration: none;
-    background: var(--s1);
-    border: 1px solid var(--bd);
-    border-radius: 20px;
-    padding: 2rem 1.75rem;
-    transition: border-color .2s, transform .2s, box-shadow .2s;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .subject-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity .2s;
-    border-radius: 20px;
-  }
-
-  .subject-card.maths::before {
-    background: radial-gradient(ellipse at top left, rgba(123,110,246,.12), transparent 60%);
-  }
-
-  .subject-card.physics::before {
-    background: radial-gradient(ellipse at top left, rgba(91,184,245,.12), transparent 60%);
-  }
-
-  .subject-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  }
-
-  .subject-card:hover { border-color: var(--b2); }
-  .subject-card:hover::before { opacity: 1; }
-
-  .card-icon {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    display: block;
-    line-height: 1;
-  }
-
-  .card-spec {
-    font-family: var(--mono);
-    font-size: 9px;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    margin-bottom: .5rem;
-    font-weight: 500;
-  }
-
-  .maths .card-spec { color: var(--p); }
-  .physics .card-spec { color: var(--b); }
-
-  .card-title {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: .6rem;
-    color: var(--tx);
-  }
-
-  .card-desc {
-    font-size: 12px;
-    color: var(--mu);
-    line-height: 1.6;
-    margin-bottom: 1.25rem;
-  }
-
-  .card-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 1.5rem;
-  }
-
-  .tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 3px 8px;
-    border-radius: 20px;
-    border: 1px solid var(--bd);
-    color: var(--mu);
-    background: var(--s2);
-  }
-
-  .card-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 500;
-    padding: 8px 16px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-    transition: opacity .15s;
-  }
-
-  .maths .card-cta {
-    background: var(--p);
-    color: #fff;
-  }
-
-  .physics .card-cta {
-    background: var(--b);
-    color: #0c0e14;
-  }
-
-  .subject-card:hover .card-cta { opacity: .85; }
-
-  .card-cta-arrow {
-    transition: transform .2s;
-  }
-
-  .subject-card:hover .card-cta-arrow {
-    transform: translateX(3px);
-  }
-
-  /* Divider */
-  .or-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--mu);
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    gap: 10px;
-    margin: 0 .5rem;
-  }
-
-  @media (max-width: 560px) {
-    .or-divider {
-      flex-direction: row;
-      margin: .5rem 0;
-    }
-    .or-divider::before, .or-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--bd);
-    }
-  }
-
-  @media (min-width: 561px) {
-    .or-divider {
-      flex-direction: column;
-      writing-mode: vertical-rl;
-    }
-  }
-
-  /* Footer */
-  .home-footer {
-    margin-top: 3rem;
-    text-align: center;
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--mu);
-    letter-spacing: .08em;
-    animation: up .5s .2s ease both;
-  }
-
-  .home-footer a {
-    color: var(--p);
-    text-decoration: none;
-  }
-
-  /* Floating orbs for ambience */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: .18;
-  }
-
-  .orb-1 {
-    width: 400px; height: 400px;
-    background: var(--p);
-    top: -100px; left: -100px;
-  }
-
-  .orb-2 {
-    width: 350px; height: 350px;
-    background: var(--b);
-    bottom: -80px; right: -80px;
-  }
-
-  @keyframes up {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-</style>
-</head>
-<body>
-
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-
-<div class="home-wrap">
-
-  <div class="home-hdr">
-    <div class="home-eye">AQA A-Level · Pre-Exam Reference</div>
-    <h1>Choose your <em>subject</em></h1>
-    <p>Spec coverage · Past paper tips · Examiner report warnings · Interactive checklists</p>
-  </div>
-
-  <div class="cards">
-
-    <!-- MATHS -->
-    <a href="index.html" class="subject-card maths">
-      <span class="card-icon">∑</span>
-      <div class="card-spec">7357 · 3 papers</div>
-      <div class="card-title">Mathematics</div>
-      <div class="card-desc">Pure · Mechanics · Statistics — vectors, proofs, calculus, hypothesis testing, SUVAT and more.</div>
-      <div class="card-tags">
-        <span class="tag">Vectors</span>
-        <span class="tag">Pure Proofs</span>
-        <span class="tag">Geometry</span>
-        <span class="tag">Trig</span>
-        <span class="tag">Statistics</span>
-        <span class="tag">Mechanics</span>
-      </div>
-      <div class="card-cta">Open reference <span class="card-cta-arrow">→</span></div>
-    </a>
-
-    <div class="or-divider">or</div>
-
-    <!-- PHYSICS -->
-    <a href="physics.html" class="subject-card physics">
-      <span class="card-icon">⚛</span>
-      <div class="card-spec">7408 · 3 papers</div>
-      <div class="card-title">Physics</div>
-      <div class="card-desc">Particles · Waves · Fields · Nuclear · Practical skills — all 12 required practicals covered.</div>
-      <div class="card-tags">
-        <span class="tag">Particles</span>
-        <span class="tag">Waves</span>
-        <span class="tag">Electricity</span>
-        <span class="tag">Fields</span>
-        <span class="tag">Nuclear</span>
-        <span class="tag">Practical</span>
-      </div>
-      <div class="card-cta">Open reference <span class="card-cta-arrow">→</span></div>
-    </a>
-
-
-    <div class="or-divider">or</div>
-
-    <!-- COMP SCI -->
-    <a href="cs.html" class="subject-card cs" style="grid-column:1/-1;max-width:360px;margin:0 auto">
-      <span class="card-icon">💻</span>
-      <div class="card-spec" style="color:#4fd1a5">H446 · 2 papers</div>
-      <div class="card-title">Computer Science</div>
-      <div class="card-desc">Systems · Algorithms · OOP · Boolean algebra · Networks · Databases — OCR spec coverage.</div>
-      <div class="card-tags">
-        <span class="tag">CPU & OS</span>
-        <span class="tag">Algorithms</span>
-        <span class="tag">Data Structures</span>
-        <span class="tag">OOP</span>
-        <span class="tag">Networks</span>
-        <span class="tag">Boolean</span>
-      </div>
-      <div class="card-cta" style="background:#4fd1a5;color:#0c0e14">Open reference <span class="card-cta-arrow">→</span></div>
-    </a>
-
-  </div>
-
-  <div class="home-footer">
-    alevelmaths &nbsp;·&nbsp; AQA spec &amp; examiner reports &nbsp;·&nbsp; good luck
-  </div>
-
-</div>
-
-</body>
-</html>
+// Initialise progress bar on page load
+updateProg();
