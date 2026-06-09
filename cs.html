@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR A-Level Computer Science — Quick Reference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">
+  <div class="eye">OCR A-Level Computer Science · H446</div>
+  <h1>Pre-Exam <em>Quick Reference</em></h1>
+  <p class="sub">Component 01 (Systems) · Component 02 (Algorithms) — spec, past papers &amp; examiner reports &nbsp;·&nbsp;
+    <a href="home.html" style="color:var(--p);text-decoration:none">← Home</a> &nbsp;·&nbsp;
+    <a href="index.html" style="color:var(--p);text-decoration:none">Maths</a> &nbsp;·&nbsp;
+    <a href="physics.html" style="color:var(--p);text-decoration:none">Physics</a>
+  </p>
+</div>
+
+<div class="nav" id="nav">
+  <button class="nb on" style="background:var(--r);color:#fff" onclick="show('checklist',this,'--r')">✓ Checklist</button>
+  <button class="nb" onclick="show('systems',this,'--p')">🖥 Systems</button>
+  <button class="nb" onclick="show('data',this,'--b')">⬡ Data</button>
+  <button class="nb" onclick="show('networking',this,'--g')">🌐 Networks</button>
+  <button class="nb" onclick="show('algorithms',this,'--a')">⟳ Algorithms</button>
+  <button class="nb" onclick="show('oop',this,'--pk')">⬡ OOP</button>
+  <button class="nb" onclick="show('theory',this,'--ye')">∧ Boolean</button>
+</div>
+
+<!-- ══════ CHECKLIST ══════ -->
+<div id="checklist" class="panel on">
+
+  <div class="big-check">
+    <h3>Pre-exam progress tracker</h3>
+    <div class="progress-wrap"><div class="progress-bar" id="pbar"></div></div>
+    <div class="progress-label" id="plabel">0 / 0 checked</div>
+  </div>
+
+  <div class="nib">
+    <div class="nib-t">📋 Paper structure</div>
+    <b class="cp">Component 01 — Computer Systems (2hrs 30min, 140 marks):</b> CPU architecture · Memory · Storage · Networking · Databases · OOP · Data types · Boolean algebra · Legal/ethical issues &nbsp;·&nbsp;
+    <b class="ca">Component 02 — Algorithms &amp; Programming (2hrs 30min, 140 marks):</b> Computational thinking · Problem solving · Standard algorithms · Big O · Recursion · Data structures · Programming concepts
+  </div>
+
+  <div class="nib" style="background:rgba(232,212,77,.06);border-color:rgba(232,212,77,.18)">
+    <div class="nib-t" style="color:var(--ye)">⚡ Things that trip students up every year</div>
+    Big O notation — know all complexities cold &nbsp;·&nbsp; Trace tables — show every step &nbsp;·&nbsp; Describe ≠ explain ≠ justify — read the command word &nbsp;·&nbsp; Pseudocode — use consistent syntax &nbsp;·&nbsp; Apply answers to the given scenario &nbsp;·&nbsp; Dijkstra's — show working table &nbsp;·&nbsp; SQL — exact syntax matters &nbsp;·&nbsp; Boolean — simplify fully using laws
+  </div>
+
+  <div class="sl">Component 01 checklist</div>
+  <div class="check-grid">
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">CPU Architecture</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>FDE cycle: Fetch (PC→MAR, memory→MDR, MDR→CIR, PC++) · Decode · Execute</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Registers: PC, ACC, MAR, MDR, CIR — know the role of each</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Buses: data (transfers data), address (specifies location), control (sends signals)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Performance factors: clock speed, number of cores, cache size, pipelining</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Von Neumann: shared memory for data and instructions. Harvard: separate</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>RISC vs CISC: RISC — simple instructions, more registers. CISC — complex instructions, fewer registers</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Interrupts: ISR saves context, handles interrupt, restores context</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">Memory &amp; Storage</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>RAM: volatile, random access, main memory. ROM: non-volatile, read only</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Cache: faster than RAM, closer to CPU. L1 &gt; L2 &gt; L3 in speed, smaller in size</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Virtual memory: uses HDD/SSD as overflow RAM. Slower — causes thrashing</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Paging: fixed-size blocks. Segmentation: variable-size logical blocks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Secondary storage: HDD (magnetic, moving parts), SSD (flash, faster), optical</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Secondary storage trade-offs: speed vs capacity vs cost vs durability</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">Operating Systems &amp; Software</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>OS roles: process management, memory management, I/O management, file management, security</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Scheduling algorithms: FCFS, Round Robin, SJF, multi-level feedback queues</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Translators: compiler (whole program at once), interpreter (line by line), assembler (assembly → machine code)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Linker: combines object files. Loader: loads into memory for execution</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>High-level vs low-level: HLL portable, easier. LLL fast, hardware-specific</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Bytecode / JIT compilation: compiled to intermediate code, interpreted at runtime (Java)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">Networking</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>TCP/IP stack: Application · Transport · Network · Link (4 layers)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>TCP: reliable, ordered, connection-oriented. UDP: fast, no guarantee, connectionless</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Packet switching: data split into packets, routed independently, reassembled</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>IP addressing: IPv4 (32-bit), IPv6 (128-bit). Subnet mask separates network/host</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>DNS: resolves domain names to IP addresses</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Network security: firewall, encryption, authentication, MAC address filtering</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Topologies: star (central switch), mesh (every device connected), bus (shared cable)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">Databases</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Relational DB: tables linked by primary and foreign keys</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Normalisation: 1NF (atomic values), 2NF (no partial dependencies), 3NF (no transitive dependencies)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>SQL: SELECT, FROM, WHERE, ORDER BY, GROUP BY, JOIN, INSERT, UPDATE, DELETE</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>ACID properties: Atomicity, Consistency, Isolation, Durability</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Transactions: all-or-nothing. Commit saves, rollback reverts</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--p)">Legal, Moral &amp; Ethical</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Computer Misuse Act 1990: unauthorised access, modification of data, DDOS</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Data Protection Act / GDPR 2018: 6 principles — lawful, fair, transparent, limited, accurate, secure</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Copyright Designs &amp; Patents Act 1988: protects software/creative works</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Regulation of Investigatory Powers Act 2000: lawful interception of comms</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Ethical issues: AI bias, digital divide, environmental impact, surveillance, automation</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sl">Component 02 checklist</div>
+  <div class="check-grid">
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">Big O &amp; Complexity</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>O(1) constant · O(log n) logarithmic · O(n) linear · O(n log n) · O(n²) quadratic · O(2ⁿ) exponential</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Bubble sort: O(n²) worst/avg, O(n) best. Insertion: O(n²) worst, O(n) best</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Merge sort: O(n log n) all cases. Quick sort: O(n log n) avg, O(n²) worst</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Binary search: O(log n). Linear search: O(n)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Dijkstra's: O((V+E) log V) with priority queue</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Tractable: polynomial time. Intractable: no known polynomial solution (e.g. travelling salesman)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">Standard Algorithms</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Bubble sort: compare adjacent, swap if out of order, repeat n−1 passes</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Insertion sort: take next element, insert into correct position in sorted portion</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Merge sort: divide in half recursively, merge back in sorted order</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Quick sort: pick pivot, partition into smaller/larger, recurse on each partition</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Binary search: requires sorted list. Check midpoint, halve search space each time</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Dijkstra's: find shortest path. Use unvisited table, update distances greedily</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>DFS: uses stack (LIFO). BFS: uses queue (FIFO)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">Data Structures</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Stack: LIFO. Push/pop from top. Uses: recursion call stack, undo, expression evaluation</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Queue: FIFO. Enqueue at rear, dequeue from front. Uses: scheduling, BFS</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Linked list: nodes with data + pointer. Insert/delete O(1) if position known, O(n) to find</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Binary tree: left &lt; root &lt; right. In-order traversal gives sorted output</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Hash table: key → hash function → index. O(1) average access. Handle collisions (chaining/open addressing)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>2D arrays: row-major order. Access time O(1)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">Recursion &amp; Programming</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Recursion needs: base case (stops recursion) + recursive case (calls itself)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Each recursive call adds a stack frame — too deep → stack overflow</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Trace tables: show every variable change for every iteration/step</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Pseudocode: consistent indentation, clear variable names, loops and conditions</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Global vs local scope: local vars exist only in their function</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Parameter passing: by value (copy, original unchanged) vs by reference (original modified)</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">OOP Concepts</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Encapsulation: data and methods bundled; private attributes accessed via getters/setters</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Inheritance: subclass inherits from superclass. Avoids code duplication</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Polymorphism: same method name, different behaviour in different classes</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Abstraction: hide implementation detail, expose only what's necessary</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Class vs object: class is blueprint, object is instance</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Constructor: special method called on instantiation to initialise attributes</span></li>
+      </ul>
+    </div>
+
+    <div class="check-card">
+      <h3 style="color:var(--a)">Computational Thinking</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Decomposition: break problem into smaller sub-problems</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Abstraction: remove unnecessary detail, focus on what matters</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Pattern recognition: identify similarities to apply known solutions</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Algorithm design: express solution as unambiguous step-by-step instructions</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Backtracking: explore all paths, undo dead ends (e.g. maze solving)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Heuristics: approximate solution, good enough when exact is intractable</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="sl">Exam technique</div>
+  <div class="check-grid">
+    <div class="check-card" style="grid-column:1/-1">
+      <h3 style="color:var(--a)">Every question</h3>
+      <ul class="cl">
+        <li><input type="checkbox" onchange="tick(this)"><span>Read the command word: State (fact only) · Describe (what happens) · Explain (why/how) · Justify (argue with reasoning) · Evaluate (weigh up pros &amp; cons)</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Apply your answer to the given scenario — generic answers lose marks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Trace tables: show EVERY row, EVERY variable change — don't skip steps</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Pseudocode: any consistent syntax is fine, but be unambiguous</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Dijkstra's: always show the working table with distances and visited nodes</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Mark count = expected detail. 4 marks = 4 distinct points</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>SQL queries: check exact syntax — missing semicolons/wrong keywords lose marks</span></li>
+        <li><input type="checkbox" onchange="tick(this)"><span>Never leave a blank — write a partial attempt for method marks</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Top marks lost — OCR examiner reports</div>
+    <b class="cr">Generic answers:</b> saying "it's faster" without applying to the scenario scores zero &nbsp;·&nbsp;
+    <b class="ca">Trace tables:</b> missing rows or skipped steps lose all subsequent marks &nbsp;·&nbsp;
+    <b class="cg">Describe vs explain:</b> "describe" = what. "Explain" = why/how. Wrong command word costs marks &nbsp;·&nbsp;
+    <b class="cb">Big O confusion:</b> O(n²) not "n squared" — write correct notation &nbsp;·&nbsp;
+    <b class="cpk">Dijkstra's:</b> must show the distance table updating — answer alone is not enough &nbsp;·&nbsp;
+    <b class="cr">SQL syntax:</b> WHERE not WHEN, = not == , quote strings correctly &nbsp;·&nbsp;
+    <b class="ca">Boolean algebra:</b> show every simplification step — jumping to answer loses working marks &nbsp;·&nbsp;
+    <b class="cg">OOP:</b> know the difference between a class and an object — confused every year &nbsp;·&nbsp;
+    <b class="cb">Recursion:</b> always identify base case AND recursive case separately
+  </div>
+
+</div>
+
+<!-- ══════ SYSTEMS ══════ -->
+<div id="systems" class="panel">
+
+  <div class="sl">CPU — FDE cycle</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">Fetch-Decode-Execute in detail</span></div>
+    <div class="steps">
+      <div class="step"><div class="sn" style="background:var(--p);color:#fff">F</div><span><b>Fetch:</b> PC→MAR (via address bus) · Memory[MAR]→MDR (via data bus) · MDR→CIR · PC incremented</span></div>
+      <div class="step"><div class="sn" style="background:var(--p);color:#fff">D</div><span><b>Decode:</b> CIR contents decoded by Control Unit — opcode identifies instruction type</span></div>
+      <div class="step"><div class="sn" style="background:var(--p);color:#fff">E</div><span><b>Execute:</b> ALU performs operation or data moved or branch taken, result stored in ACC or memory</span></div>
+    </div>
+    <div class="tip">Interrupts: at end of each FDE cycle, CPU checks interrupt register. If set → saves context (registers to stack) → runs ISR → restores context</div>
+  </div>
+
+  <div class="sl">Registers</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cp">PC</div><div class="pl-f">Program Counter</div><div class="pl-n">Address of next instruction to fetch</div></div>
+    <div class="pl"><div class="pl-l cp">ACC</div><div class="pl-f">Accumulator</div><div class="pl-n">Stores result of ALU operations</div></div>
+    <div class="pl"><div class="pl-l cp">MAR</div><div class="pl-f">Memory Address Register</div><div class="pl-n">Address to read from / write to</div></div>
+    <div class="pl"><div class="pl-l cp">MDR</div><div class="pl-f">Memory Data Register</div><div class="pl-n">Data being transferred to/from memory</div></div>
+    <div class="pl"><div class="pl-l cp">CIR</div><div class="pl-f">Current Instruction Register</div><div class="pl-n">Holds instruction being decoded/executed</div></div>
+  </div>
+
+  <div class="sl">Performance &amp; architecture</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Performance factors</span></div>
+      <div class="pg" style="margin-top:8px">
+        <div class="pl"><div class="pl-l cg">Clock speed</div><div class="pl-n">More cycles per second → faster. Measured in GHz</div></div>
+        <div class="pl"><div class="pl-l cg">Cores</div><div class="pl-n">Multiple cores → parallel execution of threads</div></div>
+        <div class="pl"><div class="pl-l cg">Cache</div><div class="pl-n">L1 fastest/smallest → L3 slowest/largest. Reduces RAM access</div></div>
+        <div class="pl"><div class="pl-l cg">Pipelining</div><div class="pl-n">Overlap FDE stages of multiple instructions</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">RISC vs CISC</span></div>
+      <div class="two" style="margin-top:8px">
+        <div class="pl"><div class="pl-l cb">RISC</div><div class="pl-n">Simple instructions, fixed length, more registers, compiler does more work, 1 clock cycle per instruction</div></div>
+        <div class="pl"><div class="pl-l cb">CISC</div><div class="pl-n">Complex instructions, variable length, fewer registers, hardware does more work, may take multiple cycles</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Memory hierarchy</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cp">Registers</div><div class="pl-n">Fastest, smallest, inside CPU</div></div>
+    <div class="pl"><div class="pl-l cp">Cache (L1/L2/L3)</div><div class="pl-n">Very fast, small, on/near CPU</div></div>
+    <div class="pl"><div class="pl-l cp">RAM</div><div class="pl-n">Fast, volatile, main memory</div></div>
+    <div class="pl"><div class="pl-l cp">SSD</div><div class="pl-n">Fast secondary storage, non-volatile</div></div>
+    <div class="pl"><div class="pl-l cp">HDD</div><div class="pl-n">Slower, larger, cheaper, non-volatile</div></div>
+    <div class="pl"><div class="pl-l cp">Virtual memory</div><div class="pl-n">HDD/SSD used as overflow RAM. Slow — causes thrashing if overused</div></div>
+  </div>
+
+  <div class="sl">OS — scheduling algorithms</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">FCFS</div><div class="pl-f">First Come First Served</div><div class="pl-n">Simple, no starvation, poor for short jobs behind long ones</div></div>
+    <div class="pl"><div class="pl-l cg">Round Robin</div><div class="pl-f">Time slice per process</div><div class="pl-n">Fair, good for time-sharing. Context switching overhead</div></div>
+    <div class="pl"><div class="pl-l cg">SJF</div><div class="pl-f">Shortest Job First</div><div class="pl-n">Minimises avg wait time. Risk of starvation for long jobs</div></div>
+    <div class="pl"><div class="pl-l cg">MLFQ</div><div class="pl-f">Multi-Level Feedback Queues</div><div class="pl-n">Multiple priority queues, processes move between them</div></div>
+  </div>
+
+  <div class="sl">Translators</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l ca">Compiler</div><div class="pl-n">Translates whole program before running. Fast execution, no source needed at runtime. Error list at end</div></div>
+    <div class="pl"><div class="pl-l ca">Interpreter</div><div class="pl-n">Translates and runs line by line. Slower. Stops at first error. Good for debugging</div></div>
+    <div class="pl"><div class="pl-l ca">Assembler</div><div class="pl-n">Assembly language → machine code. One-to-one translation</div></div>
+    <div class="pl"><div class="pl-l ca">Linker</div><div class="pl-n">Combines object files and library files into executable</div></div>
+    <div class="pl"><div class="pl-l ca">Loader</div><div class="pl-n">Loads executable into RAM and begins execution</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Systems exam traps</div>
+    <b class="cr">FDE detail:</b> name the specific registers involved (PC→MAR, not just "fetched from memory") &nbsp;·&nbsp;
+    <b class="ca">Cache vs RAM:</b> explain why cache is faster — it's closer to CPU, not just "smaller" &nbsp;·&nbsp;
+    <b class="cg">Virtual memory:</b> causes thrashing when RAM is constantly swapping — say this explicitly &nbsp;·&nbsp;
+    <b class="cb">Compiler vs interpreter:</b> compiler = whole program first, interpreter = line by line. Don't mix them up &nbsp;·&nbsp;
+    <b class="cpk">Pipelining:</b> one instruction per stage simultaneously — not "does multiple things at once" (too vague)
+  </div>
+</div>
+
+<!-- ══════ DATA ══════ -->
+<div id="data" class="panel">
+
+  <div class="sl">Number representations</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Binary &amp; conversions</span></div>
+      <div class="mb">Binary → Denary: sum of place values (128,64,32,16,8,4,2,1)
+Denary → Binary: repeated division by 2
+Hex → Binary: each hex digit = 4 bits
+Binary → Hex: group into nibbles</div>
+      <div class="tip">Hex is used as shorthand for binary — easier for humans to read memory addresses</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Two's complement (negative numbers)</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">1</div><span>Write positive value in binary</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">2</div><span>Invert all bits (flip 0s and 1s)</span></div>
+        <div class="step"><div class="sn" style="background:var(--b);color:#000">3</div><span>Add 1 to the result</span></div>
+      </div>
+      <div class="tip">MSB is the sign bit: 0 = positive, 1 = negative. Range for 8-bit: −128 to +127</div>
+    </div>
+  </div>
+
+  <div class="sl">Data types &amp; representation</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Integer</div><div class="pl-n">Whole numbers. Two's complement for signed</div></div>
+    <div class="pl"><div class="pl-l cb">Float</div><div class="pl-n">Sign · Mantissa · Exponent. Precision vs range trade-off</div></div>
+    <div class="pl"><div class="pl-l cb">Character</div><div class="pl-n">ASCII: 7-bit, 128 chars. Unicode: up to 32-bit, global chars</div></div>
+    <div class="pl"><div class="pl-l cb">Boolean</div><div class="pl-n">True/False stored as 1 bit (but often 1 byte in practice)</div></div>
+    <div class="pl"><div class="pl-l cb">String</div><div class="pl-n">Sequence of characters. Null-terminated in some languages</div></div>
+  </div>
+
+  <div class="sl">Compression</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Lossy vs Lossless</span></div>
+      <div class="pg" style="margin-top:8px">
+        <div class="pl"><div class="pl-l cg">Lossy</div><div class="pl-n">Data permanently removed. Smaller file. Used for images (JPEG), audio (MP3). Cannot recover original</div></div>
+        <div class="pl"><div class="pl-l cg">Lossless</div><div class="pl-n">All data retained. Recoverable. Used for text, executables, PNG. Run-length encoding, Huffman</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Run-Length Encoding (RLE)</span></div>
+      <div class="mb">AAABBBBBCC → 3A 5B 2C</div>
+      <div class="tip">Effective for data with long runs of repeated values (e.g. bitmap images with large areas of same colour)</div>
+    </div>
+  </div>
+
+  <div class="sl">Encryption &amp; Hashing</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l ca">Symmetric encryption</div><div class="pl-n">Same key to encrypt and decrypt. Fast. Key distribution problem</div></div>
+    <div class="pl"><div class="pl-l ca">Asymmetric encryption</div><div class="pl-n">Public key encrypts, private key decrypts. Slower. Solves key distribution</div></div>
+    <div class="pl"><div class="pl-l ca">Hashing</div><div class="pl-n">One-way function. Same input → same output. Used for passwords, integrity checks. Collisions possible</div></div>
+    <div class="pl"><div class="pl-l ca">Digital signature</div><div class="pl-n">Hash of message encrypted with sender's private key. Verifies identity and integrity</div></div>
+  </div>
+
+  <div class="sl">SQL reference</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Key SQL syntax</span></div>
+    <div class="mb">SELECT field1, field2 FROM table WHERE condition
+SELECT * FROM students WHERE grade = 'A' ORDER BY surname ASC
+SELECT s.name, c.title FROM students s JOIN courses c ON s.id = c.student_id
+INSERT INTO table (col1, col2) VALUES (val1, val2)
+UPDATE table SET col = val WHERE condition
+DELETE FROM table WHERE condition
+SELECT dept, COUNT(*) FROM employees GROUP BY dept HAVING COUNT(*) > 5</div>
+    <div class="tip"><b class="cr">WHERE</b> filters rows before grouping. <b class="ca">HAVING</b> filters after GROUP BY. Never confuse them</div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Data exam traps</div>
+    <b class="cr">Two's complement:</b> range is asymmetric — 8-bit: −128 to +127 (not ±127) &nbsp;·&nbsp;
+    <b class="ca">Floating point:</b> more bits in mantissa = more precision; more bits in exponent = wider range &nbsp;·&nbsp;
+    <b class="cg">Lossy vs lossless:</b> must say whether original can be recovered — not just "data is lost" &nbsp;·&nbsp;
+    <b class="cb">SQL WHERE vs HAVING:</b> WHERE is before GROUP BY; HAVING is after &nbsp;·&nbsp;
+    <b class="cpk">Hashing ≠ encryption:</b> hashing is one-way; encryption is reversible with a key
+  </div>
+</div>
+
+<!-- ══════ NETWORKING ══════ -->
+<div id="networking" class="panel">
+
+  <div class="sl">TCP/IP stack</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Application</div><div class="pl-n">HTTP, HTTPS, FTP, SMTP, DNS, SSH. User-facing protocols</div></div>
+    <div class="pl"><div class="pl-l cg">Transport</div><div class="pl-n">TCP (reliable, ordered) or UDP (fast, no guarantee). Port numbers. Segmentation</div></div>
+    <div class="pl"><div class="pl-l cg">Network / Internet</div><div class="pl-n">IP addressing, routing, packet forwarding. IPv4/IPv6</div></div>
+    <div class="pl"><div class="pl-l cg">Link / Data Link</div><div class="pl-n">MAC addresses, frames, error detection (CRC). Physical transmission on local network</div></div>
+  </div>
+
+  <div class="sl">Protocols compared</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">TCP vs UDP</span></div>
+      <div class="two" style="margin-top:8px">
+        <div class="pl"><div class="pl-l cb">TCP</div><div class="pl-n">Connection-oriented. 3-way handshake. Guaranteed delivery. Ordered. Error checking. Used for HTTP, email, file transfer</div></div>
+        <div class="pl"><div class="pl-l cb">UDP</div><div class="pl-n">Connectionless. No guarantee. No ordering. Fast. Used for video streaming, DNS, VoIP, gaming</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Packet vs Circuit switching</span></div>
+      <div class="two" style="margin-top:8px">
+        <div class="pl"><div class="pl-l cb">Packet</div><div class="pl-n">Data split into packets, each routed independently, reassembled at destination. Efficient, resilient</div></div>
+        <div class="pl"><div class="pl-l cb">Circuit</div><div class="pl-n">Dedicated path reserved for duration of call. Consistent quality. Wastes bandwidth if idle (e.g. old phone networks)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Network security</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cr">Firewall</div><div class="pl-n">Filters packets by IP/port rules. Stateful (tracks connections) or stateless</div></div>
+    <div class="pl"><div class="pl-l cr">Encryption</div><div class="pl-n">TLS/SSL for HTTPS. Symmetric for speed, asymmetric for key exchange</div></div>
+    <div class="pl"><div class="pl-l cr">MAC filtering</div><div class="pl-n">Only allow known MAC addresses on network</div></div>
+    <div class="pl"><div class="pl-l cr">WPA2/3</div><div class="pl-n">WiFi encryption protocols. WPA3 more secure than WPA2</div></div>
+    <div class="pl"><div class="pl-l cr">Penetration testing</div><div class="pl-n">Authorised simulated attack to find vulnerabilities</div></div>
+    <div class="pl"><div class="pl-l cr">Social engineering</div><div class="pl-n">Phishing, pretexting — exploits humans not systems</div></div>
+  </div>
+
+  <div class="sl">Topologies &amp; hardware</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Star</div><div class="pl-n">Central switch. Failure of one device doesn't affect others. Expensive (cabling)</div></div>
+    <div class="pl"><div class="pl-l cg">Mesh</div><div class="pl-n">Every device connected to every other. Resilient, expensive, complex</div></div>
+    <div class="pl"><div class="pl-l cg">Bus</div><div class="pl-n">Shared backbone cable. Cheap, simple. Single point of failure. Collision domain</div></div>
+    <div class="pl"><div class="pl-l cg">Router</div><div class="pl-n">Routes packets between networks using IP. Layer 3</div></div>
+    <div class="pl"><div class="pl-l cg">Switch</div><div class="pl-n">Forwards frames within LAN using MAC table. Layer 2</div></div>
+    <div class="pl"><div class="pl-l cg">Hub</div><div class="pl-n">Broadcasts to all ports — dumb, causes collisions. Largely obsolete</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Networking exam traps</div>
+    <b class="cr">TCP vs UDP:</b> must say why one is chosen — not just "TCP is reliable". Link to the use case &nbsp;·&nbsp;
+    <b class="ca">Router vs switch:</b> router works at Network layer (IP), switch at Data Link layer (MAC) &nbsp;·&nbsp;
+    <b class="cg">Packet switching:</b> packets can take different routes and arrive out of order — TCP reorders them &nbsp;·&nbsp;
+    <b class="cb">Firewall:</b> doesn't prevent all attacks — social engineering bypasses it entirely
+  </div>
+</div>
+
+<!-- ══════ ALGORITHMS ══════ -->
+<div id="algorithms" class="panel">
+
+  <div class="sl">Big O — time complexity</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l ca">O(1)</div><div class="pl-f">Constant</div><div class="pl-n">Array access by index, hash table lookup (avg)</div></div>
+    <div class="pl"><div class="pl-l ca">O(log n)</div><div class="pl-f">Logarithmic</div><div class="pl-n">Binary search, balanced BST operations</div></div>
+    <div class="pl"><div class="pl-l ca">O(n)</div><div class="pl-f">Linear</div><div class="pl-n">Linear search, single loop</div></div>
+    <div class="pl"><div class="pl-l ca">O(n log n)</div><div class="pl-f">Linearithmic</div><div class="pl-n">Merge sort, quick sort (avg), heap sort</div></div>
+    <div class="pl"><div class="pl-l ca">O(n²)</div><div class="pl-f">Quadratic</div><div class="pl-n">Bubble, insertion sort (worst). Nested loops</div></div>
+    <div class="pl"><div class="pl-l ca">O(2ⁿ)</div><div class="pl-f">Exponential</div><div class="pl-n">Recursive Fibonacci, brute-force subsets. Intractable</div></div>
+  </div>
+
+  <div class="sl">Sorting algorithms compared</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">At a glance</span></div>
+    <div class="mb">Bubble sort:    Best O(n)  · Avg O(n²) · Worst O(n²) · Space O(1)  — stable, simple, slow
+Insertion sort: Best O(n)  · Avg O(n²) · Worst O(n²) · Space O(1)  — stable, good for nearly-sorted data
+Merge sort:     Best O(n log n) · Avg O(n log n) · Worst O(n log n) · Space O(n) — stable, consistent
+Quick sort:     Best O(n log n) · Avg O(n log n) · Worst O(n²)      · Space O(log n) — fast in practice, unstable</div>
+    <div class="tip"><b class="ca">Merge sort</b> is preferred when stability matters or worst-case must be guaranteed. <b class="cr">Quick sort's</b> worst case is a sorted/reverse-sorted list with bad pivot choice</div>
+  </div>
+
+  <div class="sl">Searching algorithms</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Binary search</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Requires <b>sorted</b> list — check this first</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Find midpoint: mid = (low + high) // 2</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>If target = mid → found. If target &lt; mid → search left half. If target &gt; mid → search right half</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>Repeat until found or low &gt; high (not found)</span></div>
+      </div>
+      <div class="mb">Complexity: O(log n) time · O(1) space (iterative)</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Dijkstra's shortest path</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">1</div><span>Set start node distance = 0, all others = ∞</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">2</div><span>Visit unvisited node with smallest tentative distance</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">3</div><span>Update distances to all unvisited neighbours: if current + edge &lt; stored, update</span></div>
+        <div class="step"><div class="sn" style="background:var(--g);color:#000">4</div><span>Mark current node as visited. Repeat until destination visited</span></div>
+      </div>
+      <div class="tip"><b class="cr">Must show the table</b> in the exam — answer alone gets no marks</div>
+    </div>
+  </div>
+
+  <div class="sl">Graph traversals</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Depth-First Search (DFS)</span></div>
+      <div class="mb">Uses: Stack (LIFO)
+Visit node → push unvisited neighbours → pop next → repeat</div>
+      <div class="tip">Goes deep before wide. Good for: finding paths, maze solving, topological sort</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Breadth-First Search (BFS)</span></div>
+      <div class="mb">Uses: Queue (FIFO)
+Visit node → enqueue unvisited neighbours → dequeue next → repeat</div>
+      <div class="tip">Explores level by level. Finds <b>shortest path</b> in unweighted graphs. Used in: networking, social graphs</div>
+    </div>
+  </div>
+
+  <div class="sl">Recursion</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Structure &amp; call stack</span></div>
+    <div class="two" style="margin-top:8px">
+      <div class="mb">Every recursive function needs:
+1. Base case — stops recursion
+2. Recursive case — calls itself
+   with simpler input</div>
+      <div class="mb">factorial(n):
+  IF n == 1 THEN RETURN 1
+  ELSE RETURN n * factorial(n-1)</div>
+    </div>
+    <div class="tip">Each call adds a stack frame (local vars + return address). Too many calls → stack overflow. Tail recursion can be optimised by compiler</div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Algorithms exam traps</div>
+    <b class="cr">Binary search on unsorted list:</b> state it requires sorting first — don't just apply it &nbsp;·&nbsp;
+    <b class="ca">Dijkstra's table:</b> show every update to every node's distance — the table IS the answer &nbsp;·&nbsp;
+    <b class="cg">Big O drop constants:</b> O(2n) = O(n), O(n² + n) = O(n²) — only highest order term matters &nbsp;·&nbsp;
+    <b class="cb">Quick sort worst case:</b> O(n²) when pivot is always min or max — e.g. already sorted list &nbsp;·&nbsp;
+    <b class="cpk">DFS vs BFS:</b> DFS uses stack, BFS uses queue — confused every year
+  </div>
+</div>
+
+<!-- ══════ OOP ══════ -->
+<div id="oop" class="panel">
+
+  <div class="sl">The four pillars</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Encapsulation</span></div>
+      <div class="tip" style="margin-top:0;border-left-color:var(--pk)">Bundle data (attributes) and methods together in a class. Mark attributes as private. Access only via public getters/setters. Hides implementation detail.</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Inheritance</span></div>
+      <div class="tip" style="margin-top:0;border-left-color:var(--pk)">Subclass inherits attributes and methods from superclass. Adds or overrides behaviour. Avoids code duplication. "is-a" relationship (Dog is-a Animal).</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Polymorphism</span></div>
+      <div class="tip" style="margin-top:0;border-left-color:var(--pk)">Same method name, different behaviour in different classes. Achieved through method overriding. e.g. Animal.speak() → Dog.speak() returns "Woof", Cat.speak() returns "Meow".</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Abstraction</span></div>
+      <div class="tip" style="margin-top:0;border-left-color:var(--pk)">Hide complex implementation, expose only necessary interface. Abstract classes / interfaces define method signatures without implementation.</div>
+    </div>
+  </div>
+
+  <div class="sl">Class anatomy</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Pseudocode class example</span></div>
+    <div class="mb">CLASS Animal
+  PRIVATE name : String
+  PRIVATE age  : Integer
+
+  PUBLIC PROCEDURE new(n, a)   // constructor
+    name = n
+    age  = a
+  ENDPROCEDURE
+
+  PUBLIC FUNCTION getName() RETURNS String
+    RETURN name
+  ENDFUNCTION
+
+  PUBLIC PROCEDURE speak()     // overridden in subclass
+    OUTPUT "..."
+  ENDPROCEDURE
+ENDCLASS
+
+CLASS Dog INHERITS Animal
+  PUBLIC PROCEDURE speak()
+    OUTPUT "Woof"
+  ENDPROCEDURE
+ENDCLASS</div>
+  </div>
+
+  <div class="sl">Key terms</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Class</div><div class="pl-n">Blueprint/template defining attributes and methods</div></div>
+    <div class="pl"><div class="pl-l cb">Object</div><div class="pl-n">Instance of a class with its own attribute values</div></div>
+    <div class="pl"><div class="pl-l cb">Constructor</div><div class="pl-n">Special method called on instantiation to set up attributes</div></div>
+    <div class="pl"><div class="pl-l cb">Method</div><div class="pl-n">Function defined inside a class</div></div>
+    <div class="pl"><div class="pl-l cb">Attribute</div><div class="pl-n">Variable belonging to an object</div></div>
+    <div class="pl"><div class="pl-l cb">Instantiation</div><div class="pl-n">Creating an object from a class (calling the constructor)</div></div>
+    <div class="pl"><div class="pl-l cb">Override</div><div class="pl-n">Redefine a superclass method in a subclass</div></div>
+    <div class="pl"><div class="pl-l cb">Interface</div><div class="pl-n">Defines method signatures a class must implement. No code</div></div>
+  </div>
+
+  <div class="sl">Programming paradigms</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Procedural</div><div class="pl-n">Step-by-step instructions, subroutines. e.g. C, Pascal</div></div>
+    <div class="pl"><div class="pl-l cg">Object-Oriented</div><div class="pl-n">Classes and objects, encapsulation, inheritance. e.g. Java, Python, C#</div></div>
+    <div class="pl"><div class="pl-l cg">Functional</div><div class="pl-n">Functions as first-class objects, immutable data, no side effects. e.g. Haskell, OCaml</div></div>
+    <div class="pl"><div class="pl-l cg">Declarative</div><div class="pl-n">Describe what you want, not how. e.g. SQL, HTML</div></div>
+    <div class="pl"><div class="pl-l cg">Imperative</div><div class="pl-n">Explicit commands, change of state. e.g. most languages</div></div>
+    <div class="pl"><div class="pl-l cg">Event-driven</div><div class="pl-n">Code runs in response to events (clicks, keyboard). e.g. JS in browser</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ OOP exam traps</div>
+    <b class="cr">Class vs object:</b> confused every year. Class = blueprint. Object = instance with actual values &nbsp;·&nbsp;
+    <b class="ca">Encapsulation benefit:</b> say "protects data from direct external access" not just "hides data" &nbsp;·&nbsp;
+    <b class="cg">Polymorphism:</b> must give an example with two classes having the same method name behaving differently &nbsp;·&nbsp;
+    <b class="cb">Inheritance use case:</b> explain code reuse — "subclass inherits methods so they don't need rewriting"
+  </div>
+</div>
+
+<!-- ══════ BOOLEAN ══════ -->
+<div id="theory" class="panel">
+
+  <div class="sl">Boolean algebra laws</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cye">Identity</div><div class="pl-f">A AND 1 = A<br>A OR 0 = A</div></div>
+    <div class="pl"><div class="pl-l cye">Null/Annihilation</div><div class="pl-f">A AND 0 = 0<br>A OR 1 = 1</div></div>
+    <div class="pl"><div class="pl-l cye">Idempotent</div><div class="pl-f">A AND A = A<br>A OR A = A</div></div>
+    <div class="pl"><div class="pl-l cye">Complement</div><div class="pl-f">A AND NOT A = 0<br>A OR NOT A = 1</div></div>
+    <div class="pl"><div class="pl-l cye">Double negation</div><div class="pl-f">NOT(NOT A) = A</div></div>
+    <div class="pl"><div class="pl-l cye">Commutative</div><div class="pl-f">A AND B = B AND A<br>A OR B = B OR A</div></div>
+    <div class="pl"><div class="pl-l cye">Associative</div><div class="pl-f">(A AND B) AND C = A AND (B AND C)</div></div>
+    <div class="pl"><div class="pl-l cye">Distributive</div><div class="pl-f">A AND (B OR C) = (A AND B) OR (A AND C)</div></div>
+    <div class="pl"><div class="pl-l cye">Absorption</div><div class="pl-f">A AND (A OR B) = A<br>A OR (A AND B) = A</div></div>
+  </div>
+
+  <div class="sl">De Morgan's laws</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--ye)"></span><span class="card-t">The two forms — memorise both</span></div>
+    <div class="mb">NOT(A AND B) = NOT A  OR  NOT B
+NOT(A  OR  B) = NOT A AND NOT B</div>
+    <div class="tip">Mnemonic: <b style="color:var(--ye)">break the bar, change the operator</b>. NOT over a group → distribute NOT, flip AND↔OR</div>
+  </div>
+
+  <div class="sl">Logic gates</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cye">AND</div><div class="pl-f">Output 1 only when ALL inputs are 1</div></div>
+    <div class="pl"><div class="pl-l cye">OR</div><div class="pl-f">Output 1 when ANY input is 1</div></div>
+    <div class="pl"><div class="pl-l cye">NOT</div><div class="pl-f">Inverts the input</div></div>
+    <div class="pl"><div class="pl-l cye">NAND</div><div class="pl-f">NOT AND. Output 0 only when ALL inputs 1. Universal gate</div></div>
+    <div class="pl"><div class="pl-l cye">NOR</div><div class="pl-f">NOT OR. Output 1 only when ALL inputs 0. Universal gate</div></div>
+    <div class="pl"><div class="pl-l cye">XOR</div><div class="pl-f">Output 1 when inputs DIFFER (exactly one input is 1)</div></div>
+  </div>
+
+  <div class="sl">Simplification example</div>
+  <div class="card">
+    <div class="card-h"><span class="dot" style="background:var(--ye)"></span><span class="card-t">Show every step — marks awarded per step</span></div>
+    <div class="mb">Simplify: A AND (A OR B)
+
+Step 1: Absorption law → A AND (A OR B) = A ✓
+
+Simplify: NOT(NOT A AND NOT B)
+
+Step 1: De Morgan's → NOT(NOT A AND NOT B) = NOT(NOT A) OR NOT(NOT B)
+Step 2: Double negation → A OR B ✓</div>
+    <div class="tip"><b class="cr">State the law used at each step</b> — writing just the result loses all working marks</div>
+  </div>
+
+  <div class="sl">Number systems &amp; conversions</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Binary arithmetic</span></div>
+      <div class="mb">Binary addition:  0+0=0 · 0+1=1 · 1+1=10 · 1+1+1=11
+Overflow: result needs more bits than available</div>
+      <div class="tip">Carry the 1 like decimal addition. Overflow flag set when result exceeds bit width</div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Shifts</span></div>
+      <div class="mb">Left shift n: multiply by 2ⁿ (fill with 0s on right)
+Right shift n: divide by 2ⁿ (fill depends on sign)
+Logical right shift: fill with 0s
+Arithmetic right shift: fill with sign bit</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ Boolean &amp; theory exam traps</div>
+    <b class="cr">Show every Boolean simplification step</b> and name the law — jumping to answer = zero &nbsp;·&nbsp;
+    <b class="ca">De Morgan's:</b> NOT(A AND B) = NOT A OR NOT B — the operator FLIPS &nbsp;·&nbsp;
+    <b class="cg">NAND/NOR are universal:</b> any logic circuit can be built from only NAND gates (or only NOR gates) &nbsp;·&nbsp;
+    <b class="cb">XOR:</b> output is 1 when inputs DIFFER — not "at least one is 1" (that's OR) &nbsp;·&nbsp;
+    <b class="cpk">Overflow:</b> addition result too large for the bit width — must set overflow flag
+  </div>
+
+</div>
+
+</div>
+<script src="cs.js"></script>
+</body>
+</html>
