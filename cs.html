@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OCR A-Level Computer Science — Quick Reference</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+.cmp-list{list-style:none;display:flex;flex-direction:column;gap:4px;font-size:12px;line-height:1.5;color:var(--tx)}
+.cmp-list li::before{content:"• ";color:var(--mu)}
+.cmp-table{width:100%;border-collapse:collapse;font-size:11.5px;min-width:640px}
+.cmp-table th{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--mu);padding:6px 10px;border-bottom:1px solid var(--b2);text-align:left;white-space:nowrap}
+.cmp-table td{padding:7px 10px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.45}
+.cmp-table tr:last-child td{border-bottom:none}
+.cmp-table tr:hover td{background:var(--s2)}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -27,6 +37,7 @@
   <button class="nb" onclick="show('algorithms',this,'--a')">⟳ Algorithms</button>
   <button class="nb" onclick="show('oop',this,'--pk')">⬡ OOP</button>
   <button class="nb" onclick="show('theory',this,'--ye')">∧ Boolean</button>
+  <button class="nb" onclick="show('compare',this,'--r')">⇄ Compare</button>
 </div>
 
 <!-- ══════ CHECKLIST ══════ -->
@@ -700,7 +711,548 @@ Arithmetic right shift: fill with sign bit</div>
 
 </div>
 
+
+
+<!-- ══════ COMPARISONS ══════ -->
+<div id="compare" class="panel">
+
+<div class="nib">
+  <div class="nib-t">⇄ How to use this</div>
+  These are the most common 4–6 mark questions on both papers. Examiners want <b>specific technical points</b> with context — not vague generalisations. Mirror your points: if you say one side does X, say the other does Y.
 </div>
-<script src="cs.js"></script>
+
+<div class="sl">Paper 1 — Systems comparisons</div>
+
+<!-- RISC vs CISC -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">RISC vs CISC</span><span class="tag" style="background:rgba(123,110,246,.12);color:var(--p)">CPU Design</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both are CPU instruction set philosophies</li>
+        <li>Both use FDE cycle with ALU, CU, registers</li>
+        <li>Both can execute any computable program</li>
+        <li>Both use pipelining (to varying degrees)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">RISC</div>
+      <ul class="cmp-list">
+        <li>Small set of simple instructions</li>
+        <li>Fixed-length instructions</li>
+        <li>1 clock cycle per instruction</li>
+        <li>More general-purpose registers</li>
+        <li>Compiler does more work</li>
+        <li>Easier to pipeline</li>
+        <li>Used in ARM / mobile processors</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">CISC</div>
+      <ul class="cmp-list">
+        <li>Large set of complex instructions</li>
+        <li>Variable-length instructions</li>
+        <li>Instructions may take multiple cycles</li>
+        <li>Fewer registers</li>
+        <li>Hardware (microcode) does more work</li>
+        <li>Harder to pipeline</li>
+        <li>Used in x86 desktop / server CPUs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Von Neumann vs Harvard -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Von Neumann vs Harvard Architecture</span><span class="tag" style="background:rgba(91,184,245,.12);color:var(--b)">Memory</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both have CPU with ALU, CU, registers</li>
+        <li>Both use buses to transfer data</li>
+        <li>Both use FDE cycle</li>
+        <li>Both store programs in memory</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Von Neumann</div>
+      <ul class="cmp-list">
+        <li>Single shared memory for data AND instructions</li>
+        <li>Single shared bus — one transfer at a time</li>
+        <li>Von Neumann bottleneck: can't fetch data and instruction simultaneously</li>
+        <li>Simpler and cheaper to build</li>
+        <li>General-purpose computers</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Harvard</div>
+      <ul class="cmp-list">
+        <li>Separate memories for data and instructions</li>
+        <li>Separate buses for each — transfers in parallel</li>
+        <li>No bottleneck — fetch both simultaneously</li>
+        <li>More complex and expensive</li>
+        <li>Used in embedded systems, DSPs, microcontrollers</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Paging vs Segmentation -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Paging vs Segmentation</span><span class="tag" style="background:rgba(79,209,165,.12);color:var(--g)">Memory Management</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both divide memory into blocks</li>
+        <li>Both allow non-contiguous allocation</li>
+        <li>Both use a table to map logical to physical addresses</li>
+        <li>Both support virtual memory</li>
+        <li>Both managed by the OS</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Paging</div>
+      <ul class="cmp-list">
+        <li>Fixed-size blocks (pages = frames)</li>
+        <li>No external fragmentation</li>
+        <li>Internal fragmentation possible (last page part-empty)</li>
+        <li>Program unaware of page boundaries</li>
+        <li>Simple to implement</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Segmentation</div>
+      <ul class="cmp-list">
+        <li>Variable-size logical blocks (code, stack, heap)</li>
+        <li>External fragmentation possible</li>
+        <li>No internal fragmentation</li>
+        <li>Segments have logical meaning to programmer</li>
+        <li>Easier to share segments between processes</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Compiler vs Interpreter -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">Compiler vs Interpreter</span><span class="tag" style="background:rgba(240,160,75,.12);color:var(--a)">Translators</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both translate HLL source code to machine code</li>
+        <li>Both perform lexical, syntax and semantic analysis</li>
+        <li>Both report errors to the programmer</li>
+        <li>Both necessary to run HLL programs</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Compiler</div>
+      <ul class="cmp-list">
+        <li>Translates entire program before execution</li>
+        <li>Produces standalone executable</li>
+        <li>Source code not needed at runtime</li>
+        <li>Faster execution — already translated</li>
+        <li>All errors reported together at end</li>
+        <li>Output is platform-specific</li>
+        <li>e.g. C, C++, Rust</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Interpreter</div>
+      <ul class="cmp-list">
+        <li>Translates and executes line by line</li>
+        <li>No standalone executable produced</li>
+        <li>Source code required every run</li>
+        <li>Slower — retranslates each execution</li>
+        <li>Stops at first error — easier to debug</li>
+        <li>More portable across platforms</li>
+        <li>e.g. Python, Ruby</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Circuit vs Packet Switching -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Circuit Switching vs Packet Switching</span><span class="tag" style="background:rgba(217,117,196,.12);color:var(--pk)">Networking</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both transmit data between endpoints</li>
+        <li>Both use physical network infrastructure</li>
+        <li>Both can carry voice and data</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Circuit Switching</div>
+      <ul class="cmp-list">
+        <li>Dedicated path reserved for entire call</li>
+        <li>Consistent guaranteed bandwidth</li>
+        <li>Low and consistent latency — no jitter</li>
+        <li>Bandwidth wasted when line is idle</li>
+        <li>Single path failure ends the connection</li>
+        <li>Used in traditional telephone networks (PSTN)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Packet Switching</div>
+      <ul class="cmp-list">
+        <li>Data split into packets, each routed independently</li>
+        <li>Bandwidth shared — no reservation</li>
+        <li>Variable latency, possible jitter</li>
+        <li>No wasted bandwidth — capacity shared by all</li>
+        <li>Resilient — packets rerouted around failures</li>
+        <li>Used in the internet (IP networks)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Client-Server vs P2P -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Client-Server vs Peer-to-Peer</span><span class="tag" style="background:rgba(224,99,108,.12);color:var(--r)">Network Models</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both allow devices to share resources</li>
+        <li>Both require network hardware and protocols (TCP/IP)</li>
+        <li>Both can share files, printers, internet</li>
+        <li>Both can use wired or wireless connections</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Client-Server</div>
+      <ul class="cmp-list">
+        <li>Dedicated server handles all requests</li>
+        <li>Centralised management — easier to secure</li>
+        <li>Easier to back up data in one place</li>
+        <li>Server failure affects ALL clients</li>
+        <li>Expensive — specialist server hardware</li>
+        <li>Scales well for large organisations</li>
+        <li>Used in businesses, schools, web hosting</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Peer-to-Peer</div>
+      <ul class="cmp-list">
+        <li>Each device is both client AND server</li>
+        <li>No central authority — harder to manage</li>
+        <li>Data spread across devices — harder to back up</li>
+        <li>No single point of failure</li>
+        <li>Cheap — no dedicated hardware needed</li>
+        <li>Does not scale well</li>
+        <li>Used in small networks, file sharing (BitTorrent)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Server-side vs Client-side -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--ye)"></span><span class="card-t">Server-side vs Client-side Processing</span><span class="tag" style="background:rgba(232,212,77,.1);color:var(--ye)">Web</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both produce dynamic web content</li>
+        <li>Both execute code to generate output</li>
+        <li>Both communicate over HTTP/HTTPS</li>
+        <li>Both can respond to user input</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Server-side</div>
+      <ul class="cmp-list">
+        <li>Code runs on the web server</li>
+        <li>Source code hidden from user</li>
+        <li>Can access databases and back-end resources</li>
+        <li>Works on any browser / device</li>
+        <li>Higher server load</li>
+        <li>Slower — round trip to server required</li>
+        <li>Languages: PHP, Python, Node.js, Ruby</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Client-side</div>
+      <ul class="cmp-list">
+        <li>Code runs in the user's browser</li>
+        <li>Source code visible — can be inspected</li>
+        <li>Cannot directly access server databases</li>
+        <li>Depends on browser compatibility</li>
+        <li>Lower server load — uses client resources</li>
+        <li>Faster — no server round trip</li>
+        <li>Languages: JavaScript, HTML, CSS</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="sl">Paper 2 — Data structures comparisons</div>
+
+<!-- Data structures big table -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--a)"></span><span class="card-t">All data structures — properties at a glance</span></div>
+  <div style="overflow-x:auto;margin-top:.7rem">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th>Structure</th>
+          <th>Order</th>
+          <th>Access</th>
+          <th>Insert</th>
+          <th>Delete</th>
+          <th>Search</th>
+          <th>Space</th>
+          <th>Key property</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="ca"><b>Array (1D/2D)</b></td>
+          <td>Indexed</td>
+          <td class="cg">O(1)</td>
+          <td class="cr">O(n)</td>
+          <td class="cr">O(n)</td>
+          <td class="ca">O(n)</td>
+          <td>O(n)</td>
+          <td>Fixed size, random access by index</td>
+        </tr>
+        <tr>
+          <td class="cb"><b>Stack</b></td>
+          <td>LIFO</td>
+          <td class="cr">O(n)</td>
+          <td class="cg">O(1) top</td>
+          <td class="cg">O(1) top</td>
+          <td class="cr">O(n)</td>
+          <td>O(n)</td>
+          <td>Push/pop from top only. Uses: recursion, undo, expression eval</td>
+        </tr>
+        <tr>
+          <td class="cb"><b>Queue</b></td>
+          <td>FIFO</td>
+          <td class="cr">O(n)</td>
+          <td class="cg">O(1) rear</td>
+          <td class="cg">O(1) front</td>
+          <td class="cr">O(n)</td>
+          <td>O(n)</td>
+          <td>Enqueue rear, dequeue front. Uses: scheduling, BFS, printers</td>
+        </tr>
+        <tr>
+          <td class="cg"><b>Linked List</b></td>
+          <td>Sequential</td>
+          <td class="cr">O(n)</td>
+          <td class="cg">O(1)*</td>
+          <td class="cg">O(1)*</td>
+          <td class="cr">O(n)</td>
+          <td>O(n)</td>
+          <td>*If position known. Dynamic size, pointer overhead</td>
+        </tr>
+        <tr>
+          <td class="cg"><b>Binary Search Tree</b></td>
+          <td>Sorted</td>
+          <td class="ca">O(log n)**</td>
+          <td class="ca">O(log n)**</td>
+          <td class="ca">O(log n)**</td>
+          <td class="ca">O(log n)**</td>
+          <td>O(n)</td>
+          <td>**Avg case balanced. Worst O(n) if unbalanced. Left &lt; root &lt; right</td>
+        </tr>
+        <tr>
+          <td class="cp"><b>Hash Table</b></td>
+          <td>Unordered</td>
+          <td class="cg">O(1) avg</td>
+          <td class="cg">O(1) avg</td>
+          <td class="cg">O(1) avg</td>
+          <td class="cg">O(1) avg</td>
+          <td>O(n)</td>
+          <td>Key→hash→index. Collisions degrade to O(n). Best avg-case access</td>
+        </tr>
+        <tr>
+          <td class="cpk"><b>Graph</b></td>
+          <td>None</td>
+          <td class="ca">O(V+E)</td>
+          <td class="ca">O(1)</td>
+          <td class="ca">O(E)</td>
+          <td class="ca">O(V+E)</td>
+          <td>O(V+E)</td>
+          <td>Vertices + edges. Directed/undirected, weighted/unweighted</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip">O(1) = constant · O(log n) = logarithmic · O(n) = linear · O(n²) = quadratic. Smaller = faster.</div>
+</div>
+
+<!-- Stack vs Queue -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--b)"></span><span class="card-t">Stack vs Queue</span><span class="tag" style="background:rgba(91,184,245,.12);color:var(--b)">Linear</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both are linear abstract data types</li>
+        <li>Both restrict where elements are added/removed</li>
+        <li>Both can be implemented using arrays or linked lists</li>
+        <li>Both have O(n) space complexity</li>
+        <li>Both used in algorithm design</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Stack (LIFO)</div>
+      <ul class="cmp-list">
+        <li>Last In, First Out</li>
+        <li>Operations: push (add to top), pop (remove from top), peek</li>
+        <li>Only access the top element</li>
+        <li>Uses: recursion call stack, undo/redo, backtracking, expression evaluation, DFS</li>
+        <li>Overflow if full, underflow if empty</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Queue (FIFO)</div>
+      <ul class="cmp-list">
+        <li>First In, First Out</li>
+        <li>Operations: enqueue (add to rear), dequeue (remove from front)</li>
+        <li>Only access front/rear elements</li>
+        <li>Uses: CPU scheduling, printer queues, BFS, keyboard buffer</li>
+        <li>Circular queue avoids wasted space</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Array vs Linked List -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Array vs Linked List</span><span class="tag" style="background:rgba(79,209,165,.12);color:var(--g)">Sequential</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both store sequences of elements</li>
+        <li>Both support traversal of all elements</li>
+        <li>Both have O(n) space complexity</li>
+        <li>Both can implement stacks and queues</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Array</div>
+      <ul class="cmp-list">
+        <li>Fixed size — must declare size upfront</li>
+        <li>Contiguous memory — elements stored next to each other</li>
+        <li>O(1) random access by index</li>
+        <li>O(n) insertion/deletion — shifting required</li>
+        <li>No pointer overhead — memory efficient</li>
+        <li>Cache-friendly due to contiguous storage</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Linked List</div>
+      <ul class="cmp-list">
+        <li>Dynamic size — grows/shrinks at runtime</li>
+        <li>Non-contiguous — nodes can be anywhere in memory</li>
+        <li>O(n) access — must traverse from head</li>
+        <li>O(1) insertion/deletion if position known</li>
+        <li>Pointer overhead — extra memory per node</li>
+        <li>Not cache-friendly — scattered in memory</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- BST vs Hash Table -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--pk)"></span><span class="card-t">Binary Search Tree vs Hash Table</span><span class="tag" style="background:rgba(217,117,196,.12);color:var(--pk)">Search structures</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both support fast search, insert, delete</li>
+        <li>Both used as dictionary/map structures</li>
+        <li>Both have O(n) worst-case space</li>
+        <li>Both dynamically sized</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">Binary Search Tree</div>
+      <ul class="cmp-list">
+        <li>O(log n) avg search/insert/delete (balanced)</li>
+        <li>O(n) worst case if unbalanced (like a linked list)</li>
+        <li>Data stored in sorted order</li>
+        <li>In-order traversal gives sorted output</li>
+        <li>Supports range queries efficiently</li>
+        <li>Left subtree &lt; root &lt; right subtree</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">Hash Table</div>
+      <ul class="cmp-list">
+        <li>O(1) avg search/insert/delete</li>
+        <li>O(n) worst case on many collisions</li>
+        <li>Data stored in no particular order</li>
+        <li>No in-order traversal</li>
+        <li>Cannot do range queries</li>
+        <li>Key → hash function → array index</li>
+        <li>Collisions: chaining or open addressing</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- DFS vs BFS -->
+<div class="card">
+  <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">DFS vs BFS (Graph traversals)</span><span class="tag" style="background:rgba(123,110,246,.12);color:var(--p)">Graphs</span></div>
+  <div class="cmp-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;margin-top:.7rem">
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--mu);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid var(--bd)">Similarities</div>
+      <ul class="cmp-list">
+        <li>Both visit every node in a graph</li>
+        <li>Both have O(V+E) time complexity</li>
+        <li>Both need a visited set to avoid cycles</li>
+        <li>Both can detect connectivity</li>
+        <li>Both work on directed and undirected graphs</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--b);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(91,184,245,.3)">DFS — Depth First Search</div>
+      <ul class="cmp-list">
+        <li>Uses a Stack (LIFO)</li>
+        <li>Goes as deep as possible before backtracking</li>
+        <li>Memory: O(depth) — less memory for wide graphs</li>
+        <li>Does NOT guarantee shortest path</li>
+        <li>Good for: maze solving, cycle detection, topological sort, backtracking</li>
+        <li>Can get stuck in deep paths</li>
+      </ul>
+    </div>
+    <div>
+      <div class="cmp-head" style="font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.09em;color:var(--g);margin-bottom:.4rem;padding-bottom:4px;border-bottom:1px solid rgba(79,209,165,.3)">BFS — Breadth First Search</div>
+      <ul class="cmp-list">
+        <li>Uses a Queue (FIFO)</li>
+        <li>Explores all neighbours at current depth first</li>
+        <li>Memory: O(width) — less memory for deep graphs</li>
+        <li>Guarantees shortest path in unweighted graph</li>
+        <li>Good for: shortest path, network routing, social graphs, level-order traversal</li>
+        <li>Can use a lot of memory on wide graphs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="warn">
+  <div class="w-title">⚠ Comparison question tips</div>
+  <b class="cr">Don't be vague:</b> "faster" scores nothing — say "O(1) average access vs O(n) traversal" &nbsp;·&nbsp;
+  <b class="ca">Similarities matter:</b> many 6-mark questions explicitly ask for both — don't skip them &nbsp;·&nbsp;
+  <b class="cg">Use cases close the answer:</b> "therefore a hash table is preferred when fast lookup is required and ordering doesn't matter" &nbsp;·&nbsp;
+  <b class="cb">Mirror your points:</b> if you say Stack uses LIFO, say Queue uses FIFO — the contrast is the mark &nbsp;·&nbsp;
+  <b class="cpk">BST worst case:</b> always mention O(n) occurs when the tree is unbalanced (degenerate — like a linked list)
+</div>
+
+</div>
+</div>
+<script src="shared.js"></script>
 </body>
 </html>
