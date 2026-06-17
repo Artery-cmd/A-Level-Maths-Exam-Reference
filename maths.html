@@ -12,8 +12,7 @@
 <div class="hdr">
   <div class="eye">AQA A-Level Mathematics · 7357</div>
   <h1>Pre-Exam <em>Quick Reference</em></h1>
-  <p class="sub">Paper 1 (Pure) · Paper 2 (Pure + Mechanics) · Paper 3 (Pure + Statistics) — spec, past papers &amp; examiner reports
-  <a href="index.html" style="color:var(--p);text-decoration:none">← Home</a></p>
+  <p class="sub">Paper 1 (Pure) · Paper 2 (Pure + Mechanics) · Paper 3 (Pure + Statistics) — spec, past papers &amp; examiner reports &nbsp;·&nbsp; <a href="home.html" style="color:var(--p);text-decoration:none">← Home</a> &nbsp;·&nbsp; <a href="physics.html" style="color:var(--p);text-decoration:none">Physics</a></p>
 </div>
 
 <div class="nav" id="nav">
@@ -24,6 +23,7 @@
   <button class="nb" onclick="show('trig',this,'--pk')">≋ Trig</button>
   <button class="nb" onclick="show('stats',this,'--b')">📊 Statistics</button>
   <button class="nb" onclick="show('mechanics',this,'--g')">⚙ Mechanics</button>
+  <button class="nb" onclick="show('lds',this,'--ye')">🚗 LDS</button>
 </div>
 
 <!-- ══════ CHECKLIST ══════ -->
@@ -581,7 +581,7 @@
 
 <!-- ══════ MECHANICS ══════ -->
 <div id="mechanics" class="panel">
-  <div class="sl">SUVAT equations (In formula booklet)</div>
+  <div class="sl">SUVAT equations (given in formula booklet)</div>
   <div class="pg">
     <div class="pl"><div class="pl-l cb">eq 1</div><div class="pl-f">v = u + at</div></div>
     <div class="pl"><div class="pl-l cb">eq 2</div><div class="pl-f">s = ut + ½at²</div></div>
@@ -654,6 +654,117 @@
     <b class="cr">Conclusion in context:</b> always state what the numerical answer means physically
   </div>
 </div>
+
+<!-- ══════ LARGE DATA SET ══════ -->
+<div id="lds" class="panel">
+
+  <div class="nib" style="background:rgba(232,212,77,.06);border-color:rgba(232,212,77,.18)">
+    <div class="nib-t" style="color:var(--ye)">🚗 AQA Large Data Set — Cars (2022 onwards)</div>
+    The LDS contains data on <b>100 cars</b> from 2015–2016 with variables including make, engine size, power, fuel type, CO₂ emissions, mpg, price, and more. You will NOT have the data in the exam — you need to know the context, variables, and what patterns to expect.
+  </div>
+
+  <div class="sl">The variables — know all of these</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cye">Make</div><div class="pl-n">Manufacturer (e.g. Ford, BMW, Toyota). Categorical</div></div>
+    <div class="pl"><div class="pl-l cye">Model</div><div class="pl-n">Car model name. Categorical</div></div>
+    <div class="pl"><div class="pl-l cye">Engine size</div><div class="pl-n">In litres. Continuous quantitative</div></div>
+    <div class="pl"><div class="pl-l cye">Power (BHP)</div><div class="pl-n">Engine power in brake horsepower. Continuous</div></div>
+    <div class="pl"><div class="pl-l cye">Fuel type</div><div class="pl-n">Petrol, Diesel, Hybrid, Electric. Categorical</div></div>
+    <div class="pl"><div class="pl-l cye">Transmission</div><div class="pl-n">Manual or Automatic. Categorical</div></div>
+    <div class="pl"><div class="pl-l cye">MPG</div><div class="pl-n">Miles per gallon (fuel efficiency). Continuous</div></div>
+    <div class="pl"><div class="pl-l cye">CO₂ (g/km)</div><div class="pl-n">Carbon dioxide emissions. Continuous</div></div>
+    <div class="pl"><div class="pl-l cye">Price (£)</div><div class="pl-n">New list price in pounds. Continuous</div></div>
+    <div class="pl"><div class="pl-l cye">Mass (kg)</div><div class="pl-n">Kerb weight of car. Continuous</div></div>
+    <div class="pl"><div class="pl-l cye">Doors</div><div class="pl-n">Number of doors (3 or 5). Discrete</div></div>
+    <div class="pl"><div class="pl-l cye">Length / Width</div><div class="pl-n">Dimensions in mm. Continuous</div></div>
+  </div>
+
+  <div class="sl">Expected correlations — know these for interpretation questions</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--g)"></span><span class="card-t">Positive correlations (r closer to +1)</span></div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12px;margin-top:.5rem;line-height:1.5">
+        <li>• <b class="cg">Engine size ↑ → Power (BHP) ↑</b> — bigger engine = more power</li>
+        <li>• <b class="cg">Engine size ↑ → CO₂ ↑</b> — larger engines burn more fuel</li>
+        <li>• <b class="cg">Power ↑ → CO₂ ↑</b> — more powerful cars emit more</li>
+        <li>• <b class="cg">Price ↑ → Power ↑</b> — more expensive cars tend to be more powerful</li>
+        <li>• <b class="cg">Mass ↑ → CO₂ ↑</b> — heavier cars need more fuel</li>
+        <li>• <b class="cg">Length ↑ → Mass ↑</b> — larger cars tend to be heavier</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--r)"></span><span class="card-t">Negative correlations (r closer to −1)</span></div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12px;margin-top:.5rem;line-height:1.5">
+        <li>• <b class="cr">Engine size ↑ → MPG ↓</b> — bigger engines are less fuel efficient</li>
+        <li>• <b class="cr">CO₂ ↑ → MPG ↓</b> — high emissions = low efficiency (strong negative)</li>
+        <li>• <b class="cr">Power ↑ → MPG ↓</b> — more powerful cars use more fuel</li>
+        <li>• <b class="cr">Mass ↑ → MPG ↓</b> — heavier cars use more fuel per mile</li>
+      </ul>
+      <div class="tip"><b class="cr">CO₂ vs MPG</b> is the strongest relationship in the dataset — expect r close to −1. Always note if correlation is strong or weak.</div>
+    </div>
+  </div>
+
+  <div class="sl">Fuel type patterns</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cb">Diesel</div><div class="pl-n">Higher MPG than petrol on average. Higher CO₂ per litre burned but better economy. Often higher torque</div></div>
+    <div class="pl"><div class="pl-l cg">Petrol</div><div class="pl-n">Generally lower MPG than diesel. Common for smaller engine cars. Lower upfront cost typically</div></div>
+    <div class="pl"><div class="pl-l ca">Hybrid</div><div class="pl-n">Highest MPG in dataset. Lowest CO₂ emissions. Typically higher price. Electric motor assists petrol engine</div></div>
+    <div class="pl"><div class="pl-l cp">Electric</div><div class="pl-n">Zero CO₂ emissions. MPG not applicable (uses MPGe). Highest price typically</div></div>
+  </div>
+
+  <div class="sl">Exam question types — what to expect</div>
+  <div class="two">
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">Interpretation questions</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">1</div><span>"Describe the correlation between X and Y" — state direction (positive/negative), strength (strong/moderate/weak), and context</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">2</div><span>"Interpret the gradient b in context" — e.g. "for every 1 litre increase in engine size, CO₂ increases by b g/km on average"</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">3</div><span>"Comment on suitability of regression line" — check for outliers, linearity, whether prediction is within data range</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">4</div><span>"Is it appropriate to predict Y for X=…?" — only if within data range (no extrapolation)</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-h"><span class="dot" style="background:var(--p)"></span><span class="card-t">Hypothesis testing questions</span></div>
+      <div class="steps">
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">1</div><span>Test for correlation: H₀: ρ=0 (no linear correlation), H₁: ρ≠0 or ρ&gt;0 etc.</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">2</div><span>Given r and n, compare |r| to critical value from table</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">3</div><span>Conclude in context: "sufficient evidence of a positive correlation between engine size and CO₂ in the population of cars"</span></div>
+        <div class="step"><div class="sn" style="background:var(--p);color:#fff">4</div><span>Clean the data first — remove any non-applicable values (e.g. electric cars for MPG analysis)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl">Data cleaning — common LDS issues</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cr">Electric cars</div><div class="pl-n">Have no CO₂ or conventional MPG — remove these if analysing those variables</div></div>
+    <div class="pl"><div class="pl-l cr">Outliers</div><div class="pl-n">High-performance cars (high BHP, high price) may be outliers — identify and comment on effect</div></div>
+    <div class="pl"><div class="pl-l cr">Missing values</div><div class="pl-n">Some variables may be N/A for certain fuel types — clean before calculating statistics</div></div>
+    <div class="pl"><div class="pl-l ca">Sample vs census</div><div class="pl-n">100 cars is a sample — inferences about population of cars, not just these 100</div></div>
+    <div class="pl"><div class="pl-l ca">Biased sample?</div><div class="pl-n">Certain makes may be over/under-represented — consider when generalising</div></div>
+  </div>
+
+  <div class="sl">Key statistics to be able to calculate</div>
+  <div class="pg">
+    <div class="pl"><div class="pl-l cg">Mean / Median</div><div class="pl-n">For continuous variables. Median more robust to outliers</div></div>
+    <div class="pl"><div class="pl-l cg">IQR / Std Dev</div><div class="pl-n">Spread measures. IQR robust to outliers; std dev uses all data</div></div>
+    <div class="pl"><div class="pl-l cg">PMCC r</div><div class="pl-n">Measure of linear correlation. Always between −1 and 1</div></div>
+    <div class="pl"><div class="pl-l cg">Regression line</div><div class="pl-n">y = a + bx where b = Sxy/Sxx and a = ȳ − bx̄</div></div>
+    <div class="pl"><div class="pl-l cg">Outlier test</div><div class="pl-n">> Q3 + 1.5×IQR or < Q1 − 1.5×IQR</div></div>
+    <div class="pl"><div class="pl-l cg">Frequency tables</div><div class="pl-n">For categorical variables (fuel type, transmission) — use proportions</div></div>
+  </div>
+
+  <div class="warn">
+    <div class="w-title">⚠ LDS exam traps</div>
+    <b class="cr">You won't have the data:</b> you must know the variables, their types, and expected relationships from memory &nbsp;·&nbsp;
+    <b class="ca">Context in every answer:</b> "there is a positive correlation" is incomplete — say "between engine size and CO₂ emissions for this sample of cars" &nbsp;·&nbsp;
+    <b class="cg">Correlation ≠ causation:</b> larger engine size is associated with higher CO₂ but doesn't directly cause it — other factors involved &nbsp;·&nbsp;
+    <b class="cb">Extrapolation:</b> don't use the regression line to predict outside the range of engine sizes in the data &nbsp;·&nbsp;
+    <b class="cpk">Cleaning the data:</b> if asked to analyse MPG, state you would exclude electric cars first — this is a mark &nbsp;·&nbsp;
+    <b class="cr">Gradient interpretation:</b> always say "on average" and include units — "for each additional litre of engine size, CO₂ increases by b g/km on average"
+  </div>
+
+</div>
+
 </div>
 <script src="main.js"></script>
 </body>
